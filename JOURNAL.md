@@ -1,10 +1,10 @@
 # Qu'est-ce que j'ai accompli depuis le dernier bloc?
 
-### Puisque j'étais déja familier avec figma je sent que sa m'a permis de mieux projeter mes idées sur figma
+ Puisque j'étais déja familier avec figma je sent que sa m'a permis de mieux projeter mes idées sur figma
 
 # Quelle a été ma principale difficulté et comment je l'ai surmontée?
 
-### Trouver l'inspiration pour être satisfait du résultat de mon portfolio, j'ai essayé de trouver plusieurs inspiration pour surmonter cette difficulté
+ Trouver l'inspiration pour être satisfait du résultat de mon portfolio, j'ai essayé de trouver plusieurs inspiration pour surmonter cette difficulté
 
 # Qu'est-ce que j'ai appris que je ne savais pas avant?
 
