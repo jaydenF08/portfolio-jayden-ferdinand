@@ -1,5 +1,6 @@
-
 # Qu'est-ce que j'ai accompli depuis le dernier bloc?
+
+### Puisque j'étais déja familier avec figma je sent que sa m'a permis de mieux projeter mes idées sur figma
 
 # Quelle a été ma principale difficulté et comment je l'ai surmontée?
 
