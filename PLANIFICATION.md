@@ -1,6 +1,8 @@
 # portfolio-jayden-ferdinand
 
-# Gestion des données :
+# Gestion des données : Fichier JSON
+Méthode pratiquer en web 3 que j'ai trouvé assez simple
+
 # Animations : Animejs 
  Animer les 4 cases de mes projets avec une position vers le haut en apparaissant avec une fondu
 
