@@ -1,43 +1,57 @@
-.poster-scene {
-    width: 100%;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
     min-height: 100vh;
     display: grid;
     place-items: center;
-    padding: 32px;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(255,255,255,0.08) 0 6%, transparent 6.5%),
+        radial-gradient(circle at 80% 25%, rgba(255,255,255,0.08) 0 5%, transparent 5.5%),
+        radial-gradient(circle at 35% 70%, rgba(255,255,255,0.06) 0 8%, transparent 8.5%),
+        repeating-linear-gradient(
+            135deg,
+            #d7162a 0,
+            #d7162a 14px,
+            #bf0f20 14px,
+            #bf0f20 28px,
+            #c9102a 28px,
+            #c9102a 42px
+        );
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .poster {
     position: relative;
-    width: min(90vw, 560px);
-    aspect-ratio: 4 / 5.4;
-    display: grid;
-    place-items: center;
-    transform: rotate(-2deg);
-}
-
-.poster::before {
-    content: "";
-    position: absolute;
-    inset: 18px 24px 18px 24px;
-    background: rgba(117, 0, 0, 0.07);
-    border: 2px solid rgba(255, 255, 255, 0.18);
-    z-index: 0;
+    width: min(90vw, 720px);
+    height: min(86vh, 700px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: transparent;
 }
 
 .poster-card {
     position: relative;
-    z-index: 1;
     width: 100%;
-    height: 100%;
-    background: #f5f2ee;
-    border: 7px solid #f3efe8;
-    box-shadow: 9px 9px 0 rgba(0, 0, 0, 0.9), 18px 18px 0 rgba(167, 9, 19, 0.9);
-    overflow: hidden;
+    max-width: 620px;
+    min-height: 430px;
+    background: #f3f3f1;
+    border: 6px solid #f3efe9;
+    box-shadow: 0 18px 28px rgba(0, 0, 0, 0.28);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 42px;
-    transform: rotate(1.2deg);
+    justify-content: flex-start;
+    padding-top: 28px;
+    overflow: hidden;
+    background-image: url("../../assets/tenafond.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .poster-card::before {
@@ -45,44 +59,46 @@
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(135deg, rgba(0,0,0,0.03) 0 16%, transparent 16% 20%, rgba(0,0,0,0.03) 20% 22%, transparent 22% 100%),
-        repeating-linear-gradient(
-            135deg,
-            rgba(0,0,0,0.040) 0,
-            rgba(0,0,0,0.040) 2px,
-            transparent 2px,
-            transparent 10px
-        );
+        linear-gradient(90deg, transparent 0 10%, rgba(0,0,0,0.03) 10% 12%, transparent 12% 88%, rgba(0,0,0,0.03) 88% 90%, transparent 90%),
+        radial-gradient(circle, rgba(0,0,0,0.16) 0 1.2px, transparent 1.7px) 0 0 / 12px 12px;
     pointer-events: none;
 }
 
-.poster-card::after {
-    content: "";
+.poster-star {
     position: absolute;
-    inset: 18px 24px 18px 24px;
-    background: radial-gradient(circle, rgba(0,0,0,0.12) 0 1.2px, transparent 1.5px) 0 0 / 12px 12px;
-    mix-blend-mode: multiply;
-    opacity: 0.7;
-    pointer-events: none;
+    left: 18px;
+    top: 36px;
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    width: 140px;
+    height: 140px;
+    color: #0a0a0a;
+    background: #f3f3f1;
+    clip-path: polygon(50% 0%, 61% 35%, 100% 35%, 68% 58%, 82% 100%, 50% 72%, 18% 100%, 32% 58%, 0% 35%, 39% 35%);
+    font-size: 6rem;
+    line-height: 1;
+    transform: rotate(-8deg);
+    box-shadow: 0 0 0 8px #f3f3f1;
 }
 
 .top-bar {
     position: relative;
     z-index: 2;
-    width: 82%;
-    background: #0e0e0e;
+    width: calc(100% - 60px);
+    background: #0c0c0c;
     color: #f5f5f5;
     text-transform: uppercase;
     letter-spacing: 0.22em;
-    font-size: clamp(0.7rem, 1.4vw, 0.9rem);
-    font-weight: 900;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 14px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 18px;
-    padding: 14px 18px;
-    box-shadow: 6px 6px 0 rgba(189, 18, 32, 0.9);
-    transform: rotate(-1deg);
+    box-shadow: 6px 6px 0 rgb(255 0 0);
 }
 
 .title-wrap {
@@ -92,81 +108,49 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 54px;
+    margin-top: 24px;
     text-align: center;
-    transform: rotate(-2deg);
+    width: 100%;
 }
 
 .title-stars {
-    color: #d7132a;
-    font-size: clamp(1.2rem, 2vw, 1.9rem);
+    color: #d4222d;
+    font-size: 1.7rem;
     letter-spacing: 0.28em;
-    font-weight: 900;
     line-height: 1;
-}
-
-.title-stars-bottom {
-    margin-top: 10px;
+    font-weight: 700;
 }
 
 h1 {
-    position: relative;
-    margin: 10px 0 0;
-    font-size: clamp(3.1rem, 8vw, 7rem);
-    line-height: 0.82;
-    letter-spacing: 0.09em;
+    margin: 12px 0 0;
+    font-size: clamp(3.2rem, 7vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: 0.08em;
     font-weight: 900;
-    color: #f8f5f3;
+    color: #111;
     text-transform: uppercase;
-    text-shadow: 8px 8px 0 #d8132c, 12px 12px 0 rgba(0,0,0,0.3);
-    transform: rotate(-2.5deg);
-}
-
-h1::before {
-    content: "TENACITY";
-    position: absolute;
-    inset: 0;
-    color: #d8132c;
-    transform: translate(10px, 10px);
-    z-index: -1;
-    filter: blur(0.2px);
-}
-
-.decor {
-    position: absolute;
-    z-index: 2;
-    color: #d7112d;
-    font-size: clamp(2.2rem, 4vw, 3.3rem);
-    line-height: 1;
-    top: 186px;
-    font-weight: 900;
-    transform: rotate(-18deg);
-}
-
-.decor-left {
-    left: 50px;
-}
-
-.decor-right {
-    right: 50px;
-    transform: rotate(18deg);
 }
 
 @media (max-width: 480px) {
-    .poster-scene {
-        padding: 16px;
+    .poster {
+        width: 92vw;
+        height: 78vh;
     }
 
-    .poster {
-        width: min(94vw, 420px);
+    .poster-star {
+        width: 90px;
+        height: 90px;
+        font-size: 4rem;
+        left: 10px;
     }
 
     .top-bar {
-        gap: 10px;
         letter-spacing: 0.12em;
+        font-size: 0.72rem;
+        gap: 10px;
     }
 
-    .decor {
-        top: 190px;
+    .title-wrap {
+        margin-top: 18px;
     }
 }
