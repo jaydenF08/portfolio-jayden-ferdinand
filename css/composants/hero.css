@@ -1,0 +1,132 @@
+.hero {
+  background: #e10720;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__content {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  min-height: 100vh;
+  align-items: stretch;
+}
+
+.hero__content::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 53%;
+  background: #e10720;
+  z-index: 0;
+}
+
+.hero__content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 49%;
+  height: 100%;
+  background: #111111;
+  z-index: 0;
+  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.hero__left,
+.hero__right {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__left {
+  display: flex;
+  align-items: center;
+  padding: clamp(1.5rem, 4vw, 4rem);
+}
+
+.hero__text {
+  max-width: 740px;
+  margin-left: clamp(0.5rem, 1vw, 1.2rem);
+}
+
+.hero__title {
+  margin: 0;
+  color: #f5f5f5;
+  font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+  font-size: clamp(4.2rem, 8vw, 11rem);
+  line-height: 0.8;
+  letter-spacing: -0.08em;
+  text-transform: none;
+  text-shadow: 8px 8px 0 rgba(0, 0, 0, 0.9);
+}
+
+.hero__presentation {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.9);
+  padding: 1.25rem 1.1rem;
+  margin-top: 1.2rem;
+  max-width: 600px;
+}
+
+.hero__presentation p {
+  margin: 0;
+  color: #f5f5f5;
+  font-size: clamp(0.9rem, 1vw, 1.05rem);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.hero__right {
+  background: #101010;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.etoile {
+  position: absolute;
+  right: 3.5%;
+  top: 8%;
+  width: min(32vw, 420px);
+  height: auto;
+  object-fit: contain;
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 0 18px rgba(0, 0, 0, 0.2));
+}
+
+.hero__stars {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero__stars::before,
+.hero__stars::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.1);
+}
+
+@media (max-width: 900px) {
+  .hero__content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__content::before,
+  .hero__content::after {
+    display: none;
+  }
+
+  .hero__left {
+    padding-bottom: 0.5rem;
+  }
+
+  .hero__right {
+    min-height: 40vh;
+  }
+}

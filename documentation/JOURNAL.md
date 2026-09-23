@@ -25,6 +25,8 @@ J’ai réappris à utiliser les composants et les prototypes pour rendre un pro
 
  stylise cette image en persona 5
 
+ duplique mes poster card avec les nom que j'ai attribuer dans projets.png dans le dossier assets et je veux qu'il soit structurer de la même façon avec le titre marqué en haut à gauche et je veux que pour les 3 autres card que je ne n'ai pas encore mis d'image que tu me fasse déja un background image pour que je puisse les coller
+
 # outil
 
 # Résultat

@@ -1,26 +1,86 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portfolio</title>
-    <link rel="stylesheet" href="./css/composants/carte-projet.css">
-</head>
-<body>
-    <div class="poster">
-        <div class="poster-star poster-star-left" aria-hidden="true">★</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Projets</title>
+    <link rel="stylesheet" href="./css/composants/hero.css" />
+    <link rel="stylesheet" href="./css/composants/carte-projet.css" />
+  </head>
+  <body>
+    <main>
+      <section id="accueil" class="hero" aria-label="Accueil">
+        <div class="hero__content">
+          <div class="hero__left">
+            <div class="hero__text">
+              <h1 class="hero__title">Jayden<br />Ferdinand</h1>
 
-        <div class="poster-card">
-            <div class="top-bar">
-                <span>★</span>
-                <span>TENACITY</span>
-                <span>★</span>
+              <div class="hero__presentation">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+                </p>
+              </div>
             </div>
+          </div>
 
-            <div class="title-wrap">
-                <div class="title-stars">✦ ✦ ✦</div>
-            </div>
+
+          <img
+            class="etoile"
+            src="./assets/étoile.svg"
+            alt=""
+            aria-hidden="true"
+          />
+
+          <div class="hero__right" aria-label="Motif d'étoiles">
+            <div class="hero__stars" aria-hidden="true"></div>
+          </div>
         </div>
-    </div>
-</body>
+      </section>
+      
+
+      <section class="projects-page" aria-label="Mes projets">
+        <div class="projects-section">
+          <h2 class="projects-section__title">PROJETS</h2>
+
+        <div class="projects-grid">
+          <article class="project-card project-card--tenacity">
+            <div class="project-card__header">
+              <span class="project-card__star">✦</span>
+              <h3>TENACITY</h3>
+              <span class="project-card__star">✦</span>
+            </div>
+            <div class="project-card__media project-card__media--tenacity" aria-label="Projet Tenacity"></div>
+          </article>
+
+          <article class="project-card project-card--character">
+            <div class="project-card__header">
+              <span class="project-card__star">✦</span>
+              <h3>PERSONNAGE 3D</h3>
+              <span class="project-card__star">✦</span>
+            </div>
+            <div class="project-card__media project-card__media--character" aria-label="Projet Personnage 3D"></div>
+          </article>
+
+          <article class="project-card project-card--spirits">
+            <div class="project-card__header">
+              <span class="project-card__star">✦</span>
+              <h3>À TRAVERS DEUX ESPRITS</h3>
+              <span class="project-card__star">✦</span>
+            </div>
+            <div class="project-card__media project-card__media--spirits" aria-label="Projet À travers deux esprits"></div>
+          </article>
+
+          <article class="project-card project-card--environment">
+            <div class="project-card__header">
+              <span class="project-card__star">✦</span>
+              <h3>ENVIRONNEMENT 3D</h3>
+              <span class="project-card__star">✦</span>
+            </div>
+            <div class="project-card__media project-card__media--environment" aria-label="Projet Environnement 3D"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
