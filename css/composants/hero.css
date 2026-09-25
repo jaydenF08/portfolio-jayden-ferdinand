@@ -26,12 +26,13 @@
   content: "";
   position: absolute;
   top: 0;
-  right: 0;
-  width: 49%;
+  rotate: -4deg;
+  right: -5%;
+  width: 58%;
   height: 100%;
-  background: #111111;
+  background: #000000;
   z-index: 0;
-  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .hero__left,
@@ -53,19 +54,19 @@
 
 .hero__title {
   margin: 0;
-  color: #f5f5f5;
+  color: #ffffff;
   font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
-  font-size: clamp(4.2rem, 8vw, 11rem);
-  line-height: 0.8;
-  letter-spacing: -0.08em;
+  font-size: clamp(4.2rem, 8vw, 21rem);
+  line-height: 0.9;
   text-transform: none;
-  text-shadow: 8px 8px 0 rgba(0, 0, 0, 0.9);
+  text-shadow: 8px 8px 0 rgb(0 0 0 / 90%);
 }
+
 
 .hero__presentation {
   display: inline-block;
-  background: rgba(0, 0, 0, 0.9);
-  box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.9);
+  background: rgb(0 0 0 / 90%);
+  box-shadow: 12px 12px 0 rgb(55 55 55 / 29%);
   padding: 1.25rem 1.1rem;
   margin-top: 1.2rem;
   max-width: 600px;
@@ -80,17 +81,23 @@
 }
 
 .hero__right {
-  background: #101010;
-  position: relative;
+  position: absolute;
+  top: 47%;
+  right:-54%;
+  width: 100%;
+  rotate: 34deg;
+  height: 140%;
+  background: #ffffff;
   overflow: hidden;
   z-index: 0;
 }
 
+
 .etoile {
   position: absolute;
-  right: 3.5%;
-  top: 8%;
-  width: min(32vw, 420px);
+  right: -30%;
+  top: -30%;
+  width: min(120vw, 40000px);
   height: auto;
   object-fit: contain;
   z-index: 2;
@@ -126,7 +133,21 @@
     padding-bottom: 0.5rem;
   }
 
+  .etoile {
+    top: -12%;
+    right: -22%;
+    width: min(135vw, 1100px);
+  }
+
   .hero__right {
     min-height: 40vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .etoile {
+    top: -36%;
+    right: -100%;
+    width: min(165vw, 980px);
   }
 }
