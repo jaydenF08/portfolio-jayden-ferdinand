@@ -1,0 +1,27 @@
+[
+  {
+    "id": "tenacity",
+    "title": "TENACITY",
+    "variant": "tenacity",
+    "image": "./assets/tenafond.png"
+  },
+  {
+    "id": "character",
+    "title": "PERSONNAGE 3D",
+    "variant": "character",
+    "image": "./assets/ten copie 1.png"
+  },
+  {
+    "id": "spirits",
+    "title": "À TRAVERS DEUX ESPRITS",
+    "variant": "spirits",
+    "image": "./assets/chat.png"
+  },
+  {
+    "id": "environment",
+    "title": "ENVIRONNEMENT 3D",
+    "variant": "environment",
+    "image": "./assets/environnement.png"
+  }
+]
+ 

@@ -313,7 +313,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 2px solid #1e90ff;
 }
 
 .contact__wrap {
@@ -378,20 +377,22 @@
   z-index: 1;
   width: min(100%, 600px);
   margin: 0 auto;
-  background: #000000;
+  background: #ff0000;
   border-radius: 20px;
   padding: 2.5rem 2.2rem;
-  box-shadow: 0 0 0 2px #000000;
+
 }
 
 .contact__form::before {
   content: "";
   position: absolute;
   inset: 18px -18px -18px 18px;
-  background: #e10720;
+  background: #000000;
+    box-shadow: 0 0 0 2px #ffffff;
   border-radius: 20px;
   z-index: -1;
 }
+
 
 .contact__field {
   margin-bottom: 1.5rem;
@@ -568,7 +569,7 @@
 
 .competences__shadow {
   position: absolute;
-  inset: 18px -18px -18px 18px;
+  inset: 18px -17px -1px 18px;
   border-radius: 24px;
   background: #ffffff;
   z-index: -1;
