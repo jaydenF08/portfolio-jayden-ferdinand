@@ -1,5 +1,13 @@
+/*
+  Ce fichier sert à construire la section des projets du portfolio.
+  Il sélectionne la zone d'affichage, récupère les données JSON et
+  génère une carte par projet avant de l'insérer dans la page.
+*/
+
+// Sélectionne le conteneur HTML où les cartes de projets seront affichées.
 const projectsGrid = document.querySelector('#projects-grid');
 
+// Crée une carte HTML pour un projet donné à partir de ses données.
 function createProjectCard(project) {
   const article = document.createElement('article');
   article.className = `project-card project-card--${project.variant}`;
@@ -20,6 +28,7 @@ function createProjectCard(project) {
   return article;
 }
 
+// Charge les projets depuis le fichier JSON, puis les affiche dans la grille.
 async function loadProjects() {
   if (!projectsGrid) {
     return;
@@ -43,4 +52,5 @@ async function loadProjects() {
   }
 }
 
+// Déclenche le chargement des projets quand la page est entièrement chargée.
 document.addEventListener('DOMContentLoaded', loadProjects);

@@ -2,15 +2,26 @@
 <html lang="fr">
 
 <head>
+  <meta name="robots" content="noindex, nofollow">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio - Projets</title>
   <link rel="stylesheet" href="./css/composants/hero.css" />
   <link rel="stylesheet" href="./css/composants/carte-projet.css" />
+  
 </head>
 
 <body>
+  <!--
+    Structure principale du portfolio :
+    - accueil / présentation
+    - section des projets
+    - formulaire de contact
+    - compétences
+    - à propos
+  -->
   <main>
+    <!-- ===== SECTION 1 : ACCUEIL / HERO ===== -->
     <section id="accueil" class="hero" aria-label="Accueil">
       <div class="hero__content">
         <div class="hero__left">
@@ -38,7 +49,7 @@
       </div>
     </section>
 
-
+    <!-- ===== SECTION 2 : PROJETS ===== -->
     <section class="projects-page" aria-label="Mes projets">
       <div class="projects-section">
         <div class="section-title-row">
@@ -50,6 +61,7 @@
       </div>
     </section>
 
+    <!-- ===== SECTION 3 : CONTACT ===== -->
     <section class="contact" id="contact" aria-label="Contact">
       <div class="contact__wrap">
         <div class="contact__header">
@@ -83,6 +95,7 @@
       </div>
     </section>
 
+    <!-- ===== SECTION 4 : COMPÉTENCES ===== -->
     <section class="competences" aria-label="Compétences">
       <div class="competences__header">
         <div class="section-title-row section-title-row--compact">
@@ -109,7 +122,7 @@
         <div class="competences__shadow" aria-hidden="true"></div>
         <div class="competences__grid">
           <article class="competences__item">
-            <div class="competences__logo" aria-hidden="true"></div>
+           <img class="competences__logo" src="./assets/logo_davinci.png" alt="" aria-hidden="true" />" />
             <h3 class="competences__item-title">MONTAGE VIDÉO</h3>
             <p class="competences__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -135,6 +148,7 @@
       </div>
     </section>
 
+    <!-- ===== SECTION 5 : À PROPOS ===== -->
     <section class="apropos" aria-label="À propos">
       <div class="apropos__backdrop" aria-hidden="true">
         <span class="apropos__spark apropos__spark--1"></span>
@@ -164,16 +178,13 @@
               <div class="apropos__photo" aria-label="Photo de profil">
                 <img src="" alt="" aria-hidden="true" />
               </div>
-              <p class="apropos__name">Prénom Nom</p>
+              <p class="apropos__name">Jayden Ferdinand</p>
             </div>
 
             <div class="apropos__text-col">
               <p class="apropos__text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-              <p class="apropos__text">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
+              Je suis étudiant au Cégep Montmorency en Techniques d’intégration multimédia, un programme qui me permet de développer mes compétences dans différents domaines de la création numérique. Je m’intéresse particulièrement au montage vidéo, à l’animation 3D, au design et au développement multimédia. À travers mes projets scolaires et personnels, j’aime expérimenter, apprendre de nouvelles techniques et donner vie à mes idées grâce aux outils numériques. Mon portfolio présente ainsi une sélection de mes réalisations et de mon évolution en tant que créateur multimédia.              </p>
+             </p>
             </div>
           </div>
         </div>
