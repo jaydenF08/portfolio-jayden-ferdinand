@@ -3,25 +3,33 @@
     "id": "tenacity",
     "title": "TENACITY",
     "variant": "tenacity",
-    "image": "./assets/tenafond.png"
+    "image": "./assets/tenafond.png",
+    "description": "Exploration visuelle d'un univers 3D inspiré de la persistance et de la survie.",
+    "lien": "#"
   },
   {
     "id": "character",
     "title": "PERSONNAGE 3D",
     "variant": "character",
-    "image": "./assets/ten copie 1.png"
+    "image": "./assets/ten copie 1.png",
+    "description": "Conception d'un personnage stylisé avec attention portée aux formes et aux textures.",
+    "lien": "#"
   },
   {
     "id": "spirits",
     "title": "À TRAVERS DEUX ESPRITS",
     "variant": "spirits",
-    "image": "./assets/chat.png"
+    "image": "./assets/chat.png",
+    "description": "Mise en scène narrative de deux entités liées par une ambiance onirique.",
+    "lien": "#"
   },
   {
     "id": "environment",
     "title": "ENVIRONNEMENT 3D",
     "variant": "environment",
-    "image": "./assets/environnement.png"
+    "image": "./assets/environnement.png",
+    "description": "Création d'un décor immersif axé sur la composition, la lumière et la profondeur.",
+    "lien": "#"
   }
 ]
  

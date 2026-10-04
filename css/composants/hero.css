@@ -316,7 +316,7 @@
 }
 
 .contact__wrap {
-  width: min(100%, 900px);
+  width: 100%;
 }
 
 .contact__header {
@@ -324,8 +324,9 @@
   display: flex;
   align-items: flex-start;
   gap: 0.8rem;
-  width: fit-content;
+  width: 100%;
   margin-bottom: 1rem;
+  justify-content: flex-start;
 }
 
 .contact__title {
@@ -509,8 +510,9 @@
   display: flex;
   align-items: flex-start;
   gap: 0.8rem;
-  margin: 0 auto 0.8rem;
-  width: min(100%, 980px);
+  margin: 0 0 0.8rem;
+  width: 100%;
+  justify-content: flex-start;
 }
 
 .competences__title {
@@ -744,11 +746,12 @@
 .apropos__header {
   position: relative;
   z-index: 1;
-  width: min(100%, 1180px);
-  margin: 0 auto 0.8rem;
+  width: 100%;
+  margin: 0 0 0.8rem;
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
+  justify-content: flex-start;
 }
 
 .apropos__title {
@@ -994,3 +997,4 @@
     width: min(165vw, 980px);
   }
 }
+

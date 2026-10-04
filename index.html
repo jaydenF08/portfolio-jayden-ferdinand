@@ -8,10 +8,27 @@
   <title>Portfolio - Projets</title>
   <link rel="stylesheet" href="./css/composants/hero.css" />
   <link rel="stylesheet" href="./css/composants/carte-projet.css" />
+  <link rel="stylesheet" href="./css/composants/nav.css" />
+  <link rel="stylesheet" href="./css/composants/projet-modale.css" />
   
 </head>
 
 <body>
+  <header class="nav" aria-label="Navigation principale">
+    <a href="#accueil" class="nav__logo">Portfolio<span class="nav__logo-dot">.</span></a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav__menu" aria-label="Sections du portfolio">
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#accueil" class="nav__link" data-nav-link>Accueil</a></li>
+        <li><a href="#projets" class="nav__link" data-nav-link>Projets</a></li>
+        <li><a href="#competences" class="nav__link" data-nav-link>Compétences</a></li>
+        <li><a href="#contact" class="nav__link" data-nav-link>Contacts</a></li>
+        <li><a href="#apropos" class="nav__link" data-nav-link>À propos</a></li>
+      </ul>
+    </nav>
+  </header>
   <!--
     Structure principale du portfolio :
     - accueil / présentation
@@ -50,10 +67,10 @@
     </section>
 
     <!-- ===== SECTION 2 : PROJETS ===== -->
-    <section class="projects-page" aria-label="Mes projets">
+    <section class="projects-page" id="projets" aria-label="Mes projets">
       <div class="projects-section">
         <div class="section-title-row">
-          <h2 class="projects-section__title">PROJETS</h2>
+          <h2 class="projects-section__title">PROJ<span class="projects-section__title-accent">E</span>TS</h2>
           <img class="sparkle-icone" src="./assets/sparkle.svg" alt="" aria-hidden="true" />
         </div>
 
@@ -61,42 +78,8 @@
       </div>
     </section>
 
-    <!-- ===== SECTION 3 : CONTACT ===== -->
-    <section class="contact" id="contact" aria-label="Contact">
-      <div class="contact__wrap">
-        <div class="contact__header">
-          <div class="section-title-row section-title-row--compact">
-            <h2 class="contact__title">
-              <span class="contact__word">C</span><span class="contact__word">O</span><span class="contact__word">N</span><span class="contact__word">T</span><span class="contact__word">A</span><span class="contact__word">C</span><span class="contact__word">T</span><span class="contact__word">S</span>
-            </h2>
-            <img class="sparkle-icone" src="./assets/sparkle.svg" alt="" aria-hidden="true" />
-          </div>
-          <span class="contact__star" aria-hidden="true"></span>
-        </div>
-
-        <div class="contact__rule" aria-hidden="true"></div>
-
-        <form class="contact__form" action="#" method="post">
-          <div class="contact__field">
-            <label class="contact__label" for="name">Nom</label>
-            <input class="contact__input" id="name" name="name" type="text" />
-          </div>
-
-          <div class="contact__field">
-            <label class="contact__label" for="email">Email</label>
-            <input class="contact__input" id="email" name="email" type="email" />
-          </div>
-
-          <div class="contact__field">
-            <label class="contact__label" for="message">Message</label>
-            <textarea class="contact__textarea" id="message" name="message"></textarea>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- ===== SECTION 4 : COMPÉTENCES ===== -->
-    <section class="competences" aria-label="Compétences">
+    <!-- ===== SECTION 3 : COMPÉTENCES ===== -->
+    <section class="competences" id="competences" aria-label="Compétences">
       <div class="competences__header">
         <div class="section-title-row section-title-row--compact">
           <h2 class="competences__title">
@@ -148,8 +131,42 @@
       </div>
     </section>
 
+    <!-- ===== SECTION 4 : CONTACT ===== -->
+    <section class="contact" id="contact" aria-label="Contact">
+      <div class="contact__wrap">
+        <div class="contact__header">
+          <div class="section-title-row section-title-row--compact">
+            <h2 class="contact__title">
+              <span class="contact__word">C</span><span class="contact__word">O</span><span class="contact__word">N</span><span class="contact__word">T</span><span class="contact__word">A</span><span class="contact__word">C</span><span class="contact__word">T</span><span class="contact__word">S</span>
+            </h2>
+            <img class="sparkle-icone" src="./assets/sparkle.svg" alt="" aria-hidden="true" />
+          </div>
+          <span class="contact__star" aria-hidden="true"></span>
+        </div>
+
+        <div class="contact__rule" aria-hidden="true"></div>
+
+        <form class="contact__form" action="#" method="post">
+          <div class="contact__field">
+            <label class="contact__label" for="name">Nom</label>
+            <input class="contact__input" id="name" name="name" type="text" />
+          </div>
+
+          <div class="contact__field">
+            <label class="contact__label" for="email">Email</label>
+            <input class="contact__input" id="email" name="email" type="email" />
+          </div>
+
+          <div class="contact__field">
+            <label class="contact__label" for="message">Message</label>
+            <textarea class="contact__textarea" id="message" name="message"></textarea>
+          </div>
+        </form>
+      </div>
+    </section>
+
     <!-- ===== SECTION 5 : À PROPOS ===== -->
-    <section class="apropos" aria-label="À propos">
+    <section class="apropos" id="apropos" aria-label="À propos">
       <div class="apropos__backdrop" aria-hidden="true">
         <span class="apropos__spark apropos__spark--1"></span>
         <span class="apropos__spark apropos__spark--2"></span>
@@ -199,6 +216,25 @@
     </section>
   </main>
 
+  <div class="projet-modale" id="projetModale" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="projet-modale__fermer" id="projetModaleFermer" aria-label="Fermer la fenêtre">✕</button>
+    <button class="projet-modale__nav projet-modale__nav--prev" id="projetModalePrev" aria-label="Projet précédent">‹</button>
+    <button class="projet-modale__nav projet-modale__nav--next" id="projetModaleNext" aria-label="Projet suivant">›</button>
+    <div class="projet-modale__cadre">
+      <div class="projet-modale__image-wrap">
+        <img class="projet-modale__image" id="projetModaleImage" src="" alt="" />
+      </div>
+      <div class="projet-modale__info">
+        <h3 class="projet-modale__titre" id="projetModaleTitre"></h3>
+        <div class="projet-modale__description" id="projetModaleDescription"></div>
+        <a class="projet-modale__lien" id="projetModaleLien" href="#" target="_blank" rel="noopener">Voir le projet</a>
+      </div>
+    </div>
+    <span class="projet-modale__eclair projet-modale__eclair--bas-gauche" aria-hidden="true"></span>
+    <span class="projet-modale__eclair projet-modale__eclair--bas-droite" aria-hidden="true"></span>
+  </div>
+
+  <script src="./js/nav.js"></script>
   <script src="./js/main.js"></script>
 </body>
 

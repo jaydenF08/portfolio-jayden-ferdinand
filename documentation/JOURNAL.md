@@ -253,3 +253,36 @@ Copilot m'a aidé à mettre en place le chargement des projets depuis un fichier
 
 
 
+
+# Prompt : 
+
+met des sparkle svg un peu partout Crée une bibliothèque de "sparkles" (étincelles décoratives) en SVG et CSS pour
+mon portfolio, dans le même esprit que celles déjà présentes sur mon site
+(petites étoiles à 4 branches qui scintillent à côté des titres), mais avec
+plusieurs variantes de forme, couleur et taille pour créer de la diversité
+visuelle sans surcharger
+
+# Outil : 
+
+GitHub Copilot
+
+# Résultat : 
+
+J'ai obtenu une petite bibliothèque réutilisable de sparkles avec plusieurs tailles, couleurs et animations. Cela m'a permis de pourvoir les réutiliser.
+
+# Date : 
+
+4 octobre 2026
+
+# Prompt : 
+
+pour chaque projet je veux que lorsqu'on clique dessus, qu'il soit exactement affiché comme ça avec un lien qui mène vers le projets ,une description, son titre, un X pour retirer le pop up du projets, des flèches pour slide vers d'autre projet, l'image du projet, et quand on clique dessur je veux que le fond du portfolio soit flou pour bien visualiser le pop up du projet
+
+
+# Outil : 
+
+GitHub Copilot
+
+# Résultat : 
+
+Copilot m'a aidé à mettre en place le chargement des projets depuis un fichier JSON au lieu d'écrire les cartes à la main. 
