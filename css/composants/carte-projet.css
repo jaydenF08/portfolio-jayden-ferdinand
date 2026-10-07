@@ -23,9 +23,7 @@ img {
   min-height: 100vh;
   padding: 2rem 1.25rem 3rem;
   background:
-    radial-gradient(circle at 10% 20%, rgba(0, 0, 0, 0.7) 0 2.2%, transparent 2.5%),
-    radial-gradient(circle at 80% 25%, rgba(0, 0, 0, 0.7) 0 2.2%, transparent 2.5%),
-    radial-gradient(circle at 35% 70%, rgba(0, 0, 0, 0.7) 0 2.2%, transparent 2.5%),
+
     repeating-linear-gradient(
       135deg,
       #d8122b 0,
