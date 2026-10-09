@@ -5,7 +5,12 @@
     "variant": "tenacity",
     "image": "./assets/tenafond.png",
     "description": "Exploration visuelle d'un univers 3D inspiré de la persistance et de la survie.",
-    "lien": "#https://bigwizz13.itch.io/tenacity"
+    "subtitle": "Projet 3D narratif / ambiance sombre",
+    "tags": [ "Individuel", "programmation", "2D"],
+    "summary": "Une scène conceptuelle pensée comme une affiche de jeu, avec une atmosphère tendue, une composition contrastée et une direction artistique très marquée.",
+    "work": "J'ai développé le décor, réglé les textures et la lumière, puis ajusté l'encadrement de l'image pour donner une sensation de profondeur et de menace.",
+    "tools": [ "Tiled", "Visual Studio Code"] ,
+    "lien": "https://bigwizz13.itch.io/tenacity"
   },
   {
     "id": "character",
@@ -13,6 +18,11 @@
     "variant": "character",
     "image": "./assets/ten copie 1.png",
     "description": "Conception d'un personnage stylisé avec attention portée aux formes et aux textures.",
+    "subtitle": "Modélisation d'un personnage stylisé",
+    "tags": ["Individuel", "Texture", "Modélisation 3D"],
+    "summary": "Un exercice centré sur la silhouette, la lecture du personnage et l'équilibre entre simplicité des formes et identité visuelle.",
+    "work": "J'ai créé la base du personnage, peaufiné les volumes principaux, travaillé les matériaux puis vérifié la lisibilité sous plusieurs angles.",
+    "tools": ["Autodesk Maya"],
     "lien": "#"
   },
   {
@@ -21,6 +31,11 @@
     "variant": "spirits",
     "image": "./assets/chat.png",
     "description": "Mise en scène narrative de deux entités liées par une ambiance onirique.",
+    "subtitle": "Projet narratif / ambiance onirique",
+    "tags": ["Individuel","Histoire", "Ambiance", "Maya 3D"],
+    "summary": "Une image pensée pour suggérer un lien discret entre deux présences, avec une atmosphère calme, étrange et presque flottante.",
+    "work": "J'ai composé la scène pour guider le regard vers les deux esprits, puis ajusté les contrastes et les couleurs pour renforcer l'aspect rêveur.",
+    "tools": ["Autodesk Maya"],
     "lien": "#"
   },
   {
@@ -29,6 +44,11 @@
     "variant": "environment",
     "image": "./assets/environnement.png",
     "description": "Création d'un décor immersif axé sur la composition, la lumière et la profondeur.",
+    "subtitle": "Environnement 3D / scène immersive",
+    "tags": ["Individuel", "Décor", "Maya 3D", "Modélisation 3D"],
+    "summary": "Un décor conçu pour donner une forte impression d'espace et de lecture, avec des choix de cadrage et de lumière très dirigés.",
+    "work": "J'ai assemblé les éléments du décor, travaillé la hiérarchie visuelle et ajouté des détails pour renforcer l'immersion.",
+    "tools": ["Autodesk Maya"],
     "lien": "#"
   }
 ]

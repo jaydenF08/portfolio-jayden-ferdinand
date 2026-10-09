@@ -10,7 +10,7 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
-  background: #d8122b;
+    background: #e10720;
   color: #111;
 }
 
@@ -21,18 +21,8 @@ img {
 
 .projects-page {
   min-height: 100vh;
-  padding: 2rem 1.25rem 3rem;
-  background:
+  padding: 2rem 1.25rem 5rem;
 
-    repeating-linear-gradient(
-      135deg,
-      #d8122b 0,
-      #d8122b 14px,
-      #be0d25 14px,
-      #be0d25 28px,
-      #d8122b 28px,
-      #d8122b 42px
-    );
 }
 
 .projects-section {

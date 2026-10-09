@@ -29,6 +29,34 @@ function createProjectCard(project, index) {
   return article;
 }
 
+function buildProjectDetails(project) {
+  const sections = [
+    ['SOMMAIRE', project.summary || project.description || ''],
+    ["DÉTAILS", project.work || ''],
+    ['LOGICIELS', Array.isArray(project.tools) ? project.tools.join(', ') : '']
+  ];
+
+  return sections
+    .filter(([, content]) => content)
+    .map(([title, content]) => `
+      <section class="projet-modale__bloc">
+        <h4 class="projet-modale__bloc-titre">${title}</h4>
+        <p class="projet-modale__bloc-texte">${content}</p>
+      </section>
+    `)
+    .join('');
+}
+
+function buildProjectTags(project) {
+  if (!Array.isArray(project.tags) || !project.tags.length) {
+    return '';
+  }
+
+  return project.tags
+    .map((tag) => `<span class="projet-modale__tag">${tag}</span>`)
+    .join('');
+}
+
 async function loadProjects() {
   if (!projectsGrid) {
     return;
@@ -58,6 +86,8 @@ function initModalProjet() {
   const modale = document.getElementById('projetModale');
   const image = document.getElementById('projetModaleImage');
   const titre = document.getElementById('projetModaleTitre');
+  const sousTitre = document.getElementById('projetModaleSousTitre');
+  const tags = document.getElementById('projetModaleTags');
   const description = document.getElementById('projetModaleDescription');
   const lien = document.getElementById('projetModaleLien');
   const boutonFermer = document.getElementById('projetModaleFermer');
@@ -73,8 +103,16 @@ function initModalProjet() {
     image.src = projet.image;
     image.alt = projet.title;
     titre.textContent = projet.title;
-    description.textContent = projet.description || '';
-    lien.href = projet.lien || '#';
+    sousTitre.textContent = projet.subtitle || '';
+    tags.innerHTML = buildProjectTags(projet);
+    description.innerHTML = buildProjectDetails(projet);
+    if (projet.lien && projet.lien !== '#') {
+      lien.hidden = false;
+      lien.href = projet.lien;
+    } else {
+      lien.hidden = true;
+      lien.removeAttribute('href');
+    }
   }
 
   function ouvrirModale(index) {
