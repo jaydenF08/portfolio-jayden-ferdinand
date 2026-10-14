@@ -1,0 +1,52 @@
+/*
+  Transition de page inspirée de Persona 5.
+  Trois bandes diagonales (noire, blanche, rouge) balaient l'écran de gauche à droite :
+  elles couvrent la page, on change de section en dessous, puis elles repartent.
+  Durée totale : environ 0,5 seconde (réglée dans js/animations.js).
+
+  Tout est activé uniquement si la classe .js-actif est présente sur <html>
+  (ajoutée dans le <head> sauf si l'utilisateur préfère moins de mouvement).
+*/
+
+.transition-p5 {
+  --inclinaison: -20deg;
+  /* Débordement horizontal pour que les bandes inclinées couvrent aussi les coins */
+  --debord: 20vh;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow: hidden;
+  display: none;
+}
+
+/* Au chargement : le rideau couvre déjà l'écran, puis js/animations.js l'ouvre */
+.js-actif .transition-p5 {
+  display: block;
+}
+
+.js-actif .transition-p5.est-cache {
+  display: none;
+}
+
+.transition-p5__bande {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--debord) * -1);
+  width: calc(100vw + var(--debord) * 2);
+  transform: translateX(0) skewX(var(--inclinaison));
+  will-change: transform;
+}
+
+/* L'ordre compte : la dernière bande (rouge) est au-dessus des autres */
+.transition-p5__bande--noire {
+  background: #000000;
+}
+
+.transition-p5__bande--blanche {
+  background: #ffffff;
+}
+
+.transition-p5__bande--rouge {
+  background: #e10720;
+}

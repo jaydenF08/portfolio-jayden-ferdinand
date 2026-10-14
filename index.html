@@ -10,10 +10,31 @@
   <link rel="stylesheet" href="./css/composants/carte-projet.css" />
   <link rel="stylesheet" href="./css/composants/nav.css" />
   <link rel="stylesheet" href="./css/composants/projet-modale.css" />
+  <link rel="stylesheet" href="./css/composants/transition-page.css" />
+  <link rel="stylesheet" href="./css/composants/animations.css" />
 
+  <script>
+    // Active les animations Persona 5, sauf si l'utilisateur préfère moins de mouvement
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-actif');
+      // Sécurité : si animations.js ne démarre pas, on retire le rideau et les états cachés
+      setTimeout(function () {
+        if (!document.documentElement.dataset.animations) {
+          document.documentElement.classList.remove('js-actif');
+        }
+      }, 3000);
+    }
+  </script>
 </head>
 
 <body>
+  <!-- Rideau de transition (bandes noire / blanche / rouge), animé par js/animations.js -->
+  <div class="transition-p5" aria-hidden="true">
+    <span class="transition-p5__bande transition-p5__bande--noire"></span>
+    <span class="transition-p5__bande transition-p5__bande--blanche"></span>
+    <span class="transition-p5__bande transition-p5__bande--rouge"></span>
+  </div>
+
   <header class="nav" aria-label="Navigation principale">
     <a href="#accueil" class="nav__logo">Portfolio<span class="nav__logo-dot">.</span></a>
     <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks"
@@ -260,6 +281,7 @@
 
   <script src="./js/nav.js"></script>
   <script src="./js/main.js"></script>
+  <script src="./js/animations.js"></script>
 </body>
 
 </html>
