@@ -1,0 +1,336 @@
+/* ==========================================================================
+   ADAPTATION MOBILE / TABLETTE
+   À charger EN DERNIER (après animations.css). Ne touche qu'aux écrans ≤ 900 px.
+   ========================================================================== */
+
+/* ==========================================================================
+   À PROPOS — décor propre, style Persona 5 (tous les écrans)
+   Remplace le « zigzag » rouge qui coupait le haut de la page : le titre est
+   maintenant posé sur une dalle rouge inclinée aux bords nets, avec une dalle
+   blanche décalée derrière (comme les titres de menu de Persona 5).
+   ========================================================================== */
+
+/* on retire les deux zigzags rouges des coins */
+.apropos__backdrop::before {
+  content: none;
+}
+
+/* un seul accent propre : un grand triangle rouge dans le coin bas-droit */
+.apropos__backdrop::after {
+  right: 0;
+  bottom: 0;
+  width: clamp(120px, 18vw, 300px);
+  height: clamp(120px, 18vw, 300px);
+  background: #e10720;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+.apropos__title {
+  word-spacing: 0.12em;
+  isolation: isolate;
+}
+
+/* dalle rouge inclinée derrière le titre */
+.apropos .apropos__title::before {
+  content: "";
+  position: absolute;
+  inset: -0.1em -0.5em -0.04em -0.9em;
+  width: auto;
+  height: auto;
+  background: #e10720;
+  clip-path: polygon(0.5em 0, 100% 0, calc(100% - 0.35em) 100%, 0 100%);
+  z-index: -1;
+}
+
+/* dalle blanche décalée derrière la rouge */
+.apropos .apropos__title::after {
+  content: "";
+  position: absolute;
+  inset: -0.1em -0.5em -0.04em -0.9em;
+  background: #ffffff;
+  clip-path: polygon(0.5em 0, 100% 0, calc(100% - 0.35em) 100%, 0 100%);
+  transform: translate(0.14em, 0.12em);
+  filter: none;
+  z-index: -2;
+}
+
+/* la petite ligne rouge sous le titre s'aligne sur la dalle */
+.apropos__header {
+  padding-left: 0.9em;
+}
+
+/* ==========================================================================
+   CONTACT — style Persona 5 (tous les écrans)
+   Panneau rouge légèrement incliné, ombre noire + liseré blanc, étiquettes noires
+   découpées, champs aux angles vifs et gros bouton « ENVOYER ».
+   ========================================================================== */
+
+.contact {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* grand triangle rouge dans le coin bas-gauche */
+.contact::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: clamp(120px, 20vw, 340px);
+  height: clamp(120px, 20vw, 340px);
+  background: #e10720;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  z-index: -1;
+}
+
+/* fine bande blanche en diagonale, dans le coin haut-droit */
+.contact::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: clamp(140px, 24vw, 420px);
+  height: clamp(140px, 24vw, 420px);
+  background: linear-gradient(225deg, #e10720 0 38%, #000 38% 44%, #fff 44% 50%, transparent 50%);
+  z-index: -1;
+}
+
+.contact__wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.contact__rule {
+  height: 10px;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 18px) 100%, 0 100%);
+}
+
+.contact .contact__form {
+  background: #e10720;
+  border-radius: 0;
+  rotate: -1deg;
+  box-shadow: 14px 14px 0 #fff;
+}
+
+.contact .contact__form::before {
+  content: none;
+}
+
+/* étiquette noire inclinée derrière chaque libellé */
+.contact__label {
+  display: inline-block;
+  padding: 0.12em 0.6em 0.08em 0.4em;
+  background: #000;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 0.4em) 100%, 0 100%);
+  text-shadow: none;
+}
+
+.contact__input,
+.contact__textarea {
+  display: block;
+  border-radius: 0;
+  box-shadow: 6px 6px 0 #000;
+}
+
+.contact__submit {
+  display: block;
+  margin: 2rem 0 0 auto;
+  padding: 0.5em 1.6em 0.45em 1.2em;
+  border: 0;
+  background: #000;
+  color: #fff;
+  font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  cursor: pointer;
+  clip-path: polygon(0.7em 0, 100% 0, calc(100% - 0.7em) 100%, 0 100%);
+  transition: background 0.15s, color 0.15s, translate 0.15s;
+}
+
+.contact__submit:hover,
+.contact__submit:focus-visible {
+  background: #fff;
+  color: #e10720;
+  translate: 0 -3px;
+  outline: none;
+}
+
+/* Aucune page ne doit jamais défiler de gauche à droite */
+@media (max-width: 900px) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  .hero,
+  .competences,
+  .contact,
+  .apropos,
+  .projects-page {
+    overflow-x: clip;
+  }
+
+  /* Les petites étoiles décoratives ne dépassent plus de l'écran */
+  .sparkle-icone {
+    max-width: 100%;
+  }
+}
+
+/* ---------- ACCUEIL : l'image du bureau reste entièrement dans l'écran ---------- */
+@media (max-width: 900px) {
+  .hero__content {
+    overflow: hidden;
+  }
+
+  .bureau {
+    display: none;
+  }
+}
+
+/* ---------- COMPÉTENCES : barre blanche et ombre bien à l'intérieur de l'écran ---------- */
+@media (max-width: 900px) {
+  .competences {
+    padding-inline: 1.25rem;
+  }
+
+  /* la ligne blanche diagonale ne colle plus au bord droit */
+  .competences::before {
+    inset: 0 1.25rem 0 0;
+  }
+
+  .competences__title {
+    font-size: clamp(1.9rem, 9.4vw, 4rem);
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+
+  .competences__card {
+    width: calc(100% - 14px);
+    margin: 0 auto;
+    position: relative;
+    right: 7px;
+  }
+
+  .competences__shadow {
+    inset: 14px -14px -1px 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .competences {
+    padding-inline: 0.9rem;
+  }
+
+  .competences::before {
+    inset: 0 0.9rem 0 0;
+  }
+}
+
+/* ---------- CONTACT : formulaire centré ---------- */
+@media (max-width: 900px) {
+  .contact {
+    padding-inline: 1.25rem;
+    justify-content: center;
+  }
+
+  .contact__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact__form {
+    width: calc(100% - 14px);
+    margin-inline: auto;
+    /* on compense l'ombre noire décalée de 14 px pour que l'ensemble paraisse centré */
+    position: relative;
+    right: 7px;
+  }
+
+}
+
+/* ---------- À PROPOS : titre, carte et ombre bien placés ---------- */
+@media (max-width: 900px) {
+  .apropos {
+    min-height: auto;
+    padding: 5.5rem 1.25rem 3rem;
+  }
+
+  .apropos__header {
+    margin-bottom: 0.6rem;
+    padding-left: 0.4rem;
+  }
+
+  .apropos__title {
+    font-size: clamp(2.4rem, 12vw, 4.2rem);
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    white-space: nowrap;
+  }
+
+  .apropos__rule {
+    width: min(70%, 260px);
+    margin: 0.4rem 0 1.8rem 0.4rem;
+  }
+
+  .apropos__card-wrap {
+    width: 100%;
+    gap: 1.5rem;
+  }
+
+  .apropos .apropos__card {
+    width: calc(100% - 14px);
+    margin-right: auto;
+    box-shadow: 14px 14px 0 #e10720, 0 0 0 2px rgba(255, 255, 255, 0.2);
+  }
+
+  .apropos__layout {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    justify-items: center;
+  }
+
+  .apropos__photo-col {
+    width: 100%;
+  }
+
+  .apropos__text {
+    text-align: left;
+    line-height: 1.7;
+    font-size: 0.98rem;
+  }
+
+  /* les étoiles décoratives passent en ligne sous la carte, centrées */
+  .apropos__decor {
+    order: 2;
+    transform: none;
+    width: 100%;
+    min-width: 0;
+    height: 90px;
+    margin-inline: auto;
+  }
+
+  .apropos__decor-star--big { top: 6px; left: 22%; right: auto; width: 60px; height: 60px; }
+  .apropos__decor-star--mid { top: 24px; left: 46%; right: auto; width: 46px; height: 46px; }
+  .apropos__decor-star--small { top: 8px; left: 66%; right: auto; width: 34px; height: 34px; }
+
+  .apropos__backdrop::before,
+  .apropos__backdrop::after {
+    width: 150px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 560px) {
+  .apropos {
+    padding: 5rem 1rem 2.5rem;
+  }
+
+  .apropos .apropos__card {
+    padding: 1.2rem 1rem;
+  }
+}
