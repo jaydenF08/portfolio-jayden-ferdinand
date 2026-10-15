@@ -13,15 +13,19 @@ function createProjectCard(project, index) {
       <h3>${project.title}</h3>
       <span class="project-card__star">✦</span>
     </div>
-    <div
-      class="project-card__media"
-      aria-label="Projet ${project.title}"
-      style="background-image: url('${project.image}');"
-      tabindex="0"
-    >
-      <div class="project-card__fondu">
-        <h4 class="project-card__fondu-titre">${project.title}</h4>
-        <p class="project-card__fondu-texte">${project.description ? project.description : ''}</p>
+    <!-- Le conteneur .project-card__image limite le balayage rouge au survol à la zone de l'image
+         (voir animations.css). Il n'a aucun style propre, donc la mise en page ne change pas. -->
+    <div class="project-card__image">
+      <div
+        class="project-card__media"
+        aria-label="Projet ${project.title}"
+        style="background-image: url('${project.image}');"
+        tabindex="0"
+      >
+        <div class="project-card__fondu">
+          <h4 class="project-card__fondu-titre">${project.title}</h4>
+          <p class="project-card__fondu-texte">${project.description ? project.description : ''}</p>
+        </div>
       </div>
     </div>
   `;

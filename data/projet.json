@@ -7,8 +7,8 @@
     "description": "Exploration visuelle d'un univers 3D inspiré de la persistance et de la survie.",
     "subtitle": "Projet 3D narratif / ambiance sombre",
     "tags": [ "Individuel", "programmation", "2D"],
-    "summary": "Une scène conceptuelle pensée comme une affiche de jeu, avec une atmosphère tendue, une composition contrastée et une direction artistique très marquée.",
-    "work": "J'ai développé le décor, réglé les textures et la lumière, puis ajusté l'encadrement de l'image pour donner une sensation de profondeur et de menace.",
+    "summary": "Franchis des obstacles périlleux, évite les pièges et décroche la pomme d'or pour réussir.",
+    "work":  "J'ai téléchargé des assets, puis je les ai intégrés dans Tiled pour concevoir le premier niveau du jeu. Les déplacements du personnage, le power-up et la musique ont été programmés dans Visual Studio Code. Pour le gameplay , je me suis inspiré de Super Mario Bros.",
     "tools": [ "Tiled", "Visual Studio Code"] ,
     "lien": "https://bigwizz13.itch.io/tenacity"
   },
@@ -17,26 +17,26 @@
     "title": "PERSONNAGE 3D",
     "variant": "character",
     "image": "./assets/ten copie 1.png",
-    "description": "Conception d'un personnage stylisé avec attention portée aux formes et aux textures.",
+    "description": "Une grande silhouette en costume, couronnée de branches, dans une forêt sombre.",
     "subtitle": "Modélisation d'un personnage stylisé",
     "tags": ["Individuel", "Texture", "Modélisation 3D"],
-    "summary": "Un exercice centré sur la silhouette, la lecture du personnage et l'équilibre entre simplicité des formes et identité visuelle.",
-    "work": "J'ai créé la base du personnage, peaufiné les volumes principaux, travaillé les matériaux puis vérifié la lisibilité sous plusieurs angles.",
+    "summary": " Création d'un être vivant, simple inspiré de n’importe quel univers.",
+    "work": "J'ai conçu un personnage 3D fictif dans l'univers de l'horreur. Les textures du costume et du corps sont inspirées de Slender Man, tandis que le visage et la peau s'inspirent de la Bête de la série Over the Garden Wall.",
     "tools": ["Autodesk Maya"],
-    "lien": "#"
+    "lien": "https://cmontmorency365.sharepoint.com/:p:/r/sites/Section_fusion_A24_582314MO-1-2-3/_layouts/15/doc2.aspx?sourcedoc=%7B7AA9377F-C3FD-4BCC-B01D-4AF2F7EA903C%7D&file=Ferdinand_Jayden_PR2_concept_582314.pptx&action=edit&mobileredirect=true&or=WORD-WEB.BODY.NT&ct=1792018162850"
   },
   {
     "id": "spirits",
     "title": "À TRAVERS DEUX ESPRITS",
     "variant": "spirits",
     "image": "./assets/chat.png",
-    "description": "Mise en scène narrative de deux entités liées par une ambiance onirique.",
+    "description": " une mini histoire d’un chat noir qui est en quête de lui-même. ",
     "subtitle": "Projet narratif / ambiance onirique",
     "tags": ["Individuel","Histoire", "Ambiance", "Maya 3D"],
-    "summary": "Une image pensée pour suggérer un lien discret entre deux présences, avec une atmosphère calme, étrange et presque flottante.",
-    "work": "J'ai composé la scène pour guider le regard vers les deux esprits, puis ajusté les contrastes et les couleurs pour renforcer l'aspect rêveur.",
+    "summary": "une mini histoire d’un chat noir qui est en quête de lui-même.",
+    "work": "J'ai créé un environnement blanc, vide mais étrangement familier, qui évoque les souvenirs flous du personnage. Le chat est une réinterprétation de Klonoa : je l'ai déconstruit pour l'adapter à l'identité que je voulais donner à mon personnage. L'univers de l'histoire s'inspire de la Cité copiée de NieR: Automata.",
     "tools": ["Autodesk Maya"],
-    "lien": "#"
+    "lien": "https://cmontmorency365.sharepoint.com/sites/Section_fusion_H25_582414MO-41-42/_layouts/15/stream.aspx?id=%2Fsites%2FSection%5Ffusion%5FH25%5F582414MO%2D41%2D42%2FSupports%20de%20cours%2F3%2E%20REMISES%2F3%2E%20DOSSIER%20DE%20REMISES%2F2%2E%20PROJET%20%2D%20PAYSAGES%2F7%2E%20PR1%2Ddiffusion%2FAM%2FFerdinand%5FJayden%5FPR1%5Fdiffusion%2Fpaysage%20%28officiel%29%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Eb90a97a3%2D3fa6%2D463c%2Dbcd5%2D81eeb3ef617a"
   },
   {
     "id": "environment",
@@ -46,10 +46,10 @@
     "description": "Création d'un décor immersif axé sur la composition, la lumière et la profondeur.",
     "subtitle": "Environnement 3D / scène immersive",
     "tags": ["Individuel", "Décor", "Maya 3D", "Modélisation 3D"],
-    "summary": "Un décor conçu pour donner une forte impression d'espace et de lecture, avec des choix de cadrage et de lumière très dirigés.",
-    "work": "J'ai assemblé les éléments du décor, travaillé la hiérarchie visuelle et ajouté des détails pour renforcer l'immersion.",
+    "summary": "Une tentative de visualisation d'un monde de rêve lucide, où l'on garde conscience de son environnement même s'il est irréel.",
+    "work": "Projet réalisé en équipe : des éléments déplacés, comme des tentacules et des champignons lumineux, créent une atmosphère onirique.",
     "tools": ["Autodesk Maya"],
-    "lien": "#"
+    "lien": "https://cmontmorency365.sharepoint.com/:p:/r/sites/Section_fusion_A24_582314MO-1-2-3/_layouts/15/Doc.aspx?sourcedoc=%7B739C1891-7711-48BE-AF9C-91E765D9FF60%7D&file=RICHARD_MULLER_FERDINAND_PROJET_CONCEPT_01.pptx&action=edit&mobileredirect=true&or=WORD-WEB.BODY.NT&ct=1792018213185"
   }
 ]
  

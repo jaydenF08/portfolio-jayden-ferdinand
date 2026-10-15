@@ -107,10 +107,12 @@
   to   { translate: 10px -8px; scale: 1.06; }
 }
 
-/* Balayage rouge qui traverse une carte au survol */
+/* Balayage rouge qui traverse l'image d'une carte au survol.
+   -80 % → 80 % : la bande part et arrive juste hors de l'image, donc elle est visible
+   presque tout le temps (avant, elle partait de beaucoup plus loin et on attendait qu'elle arrive). */
 @keyframes balayageRouge {
-  from { translate: -130% 0; }
-  to   { translate: 130% 0; }
+  from { translate: -80% 0; }
+  to   { translate: 80% 0; }
 }
 
 /* Modale : le cadre claque à l'écran */
@@ -131,9 +133,13 @@
 }
 
 /* Changement de projet : l'image est révélée en diagonale, le texte glisse */
+/* Balayage en diagonale, de gauche à droite : le même pour l'image ET pour le contour rouge.
+   Le polygone dépasse volontairement du cadre (de -20 % à 120 % en hauteur, jusqu'à 130 % en
+   largeur) pour inclure le contour rouge et le triangle, qui débordent derrière l'image.
+   Avec l'ancien polygone (0 % à 100 %), ils étaient coupés puis apparaissaient d'un coup à la fin. */
 @keyframes changementImage {
-  from { clip-path: polygon(0 0, 0 0, -15% 100%, -15% 100%); }
-  to   { clip-path: polygon(0 0, 115% 0, 100% 100%, -15% 100%); }
+  from { clip-path: polygon(0 -20%, 0 -20%, -20% 120%, -20% 120%); }
+  to   { clip-path: polygon(-10% -20%, 130% -20%, 115% 120%, -25% 120%); }
 }
 
 @keyframes changementTexte {
@@ -153,7 +159,7 @@
   animation: entreeForme 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s backwards;
 }
 
-.page-prete .etoile {
+.page-prete img.etoile {
   /* L'entrée joue une fois, puis le flottement continu prend le relais (propriétés différentes) */
   animation:
     entreeEtoile 1s cubic-bezier(0.2, 0.9, 0.3, 1) 0.3s backwards,
@@ -215,6 +221,30 @@
 .competences__item.revele .competences__logo {
   animation: entreeMonte 0.6s cubic-bezier(0.2, 0.8, 0.3, 1) calc(var(--i, 0) * 140ms + 250ms) backwards;
 }
+
+/* Section À propos : correctif de l'animation de la carte.
+   Avant, l'ombre rouge était un ::before avec z-index: -1. Dès qu'un élément s'anime
+   (opacity / transform), il devient son propre « contexte d'empilement » et son ::before
+   passe devant son fond blanc : la carte était rouge pendant l'animation, puis redevenait
+   blanche d'un coup à la fin. Une vraie box-shadow reste toujours derrière la carte,
+   avec exactement le même rendu (décalage de 18 px, mêmes coins arrondis). */
+.apropos .apropos__card {
+  box-shadow: 18px 18px 0 #e10720, 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.apropos .apropos__card::before {
+  content: none;
+}
+
+/* Le titre avait un filter: drop-shadow(0 0 0 transparent) sans effet visible,
+   mais qui force le navigateur à redessiner le titre à chaque image de l'animation. */
+.apropos .apropos__title {
+  filter: none;
+}
+
+/* Note : les sélecteurs ci-dessus commencent par « .apropos » exprès. Ils sont ainsi plus
+   précis que ceux de hero.css et gagnent toujours, peu importe l'ordre des <link>
+   dans index.html. */
 
 
 /* ========== 4. ÉTOILES ET FORMES « VIVANTES » ========== */
@@ -281,9 +311,10 @@
     transform: skewX(-14deg) scaleX(1);
   }
 
-  /* Cartes de projets : la couleur se révèle et un balayage rouge traverse la carte */
+  /* Cartes de projets : la couleur se révèle et un balayage rouge traverse l'IMAGE
+     (pas toute la carte). */
   .project-card__media {
-    transition: filter 0.5s ease;
+    transition: filter 0.3s ease;
   }
 
   .project-card:hover .project-card__media,
@@ -291,18 +322,30 @@
     filter: grayscale(0) contrast(1.1);
   }
 
-  .project-card::after {
+  /* .project-card__image entoure seulement l'image : son overflow: hidden coupe le balayage
+     exactement aux bords de l'image, sans toucher à l'en-tête ni aux contours de la carte.
+     Le balayage est un ::after de ce conteneur (et non de l'image elle-même), pour ne pas subir
+     le filtre noir et blanc de l'image : le rouge reste bien rouge pendant la révélation. */
+  .project-card__image {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card__image::after {
     content: "";
     position: absolute;
-    inset: -10% -30%;
+    inset: 0;
     z-index: 3;
     pointer-events: none;
     background: linear-gradient(115deg, transparent 38%, #e10720 38% 54%, #ffffff 54% 57%, transparent 57%);
-    translate: -130% 0;
+    /* Au repos, la bande attend juste à gauche de l'image (hors cadre) */
+    translate: -80% 0;
   }
 
-  .project-card:hover::after {
-    animation: balayageRouge 0.55s cubic-bezier(0.6, 0, 0.3, 1);
+  .project-card:hover .project-card__image::after {
+    /* Courte et énergique : démarre tout de suite (ease-out) et la bande est visible
+       presque pendant toute la durée du mouvement */
+    animation: balayageRouge 0.35s cubic-bezier(0.25, 0.8, 0.35, 1);
   }
 
   /* Bouton « Voir le projet » : petit bond en biais */
@@ -365,5 +408,155 @@ main > section[tabindex="-1"]:focus {
 
   .projet-modale__info.projet-change {
     animation: changementTexte 0.4s ease-out;
+  }
+}
+
+
+/* ========== FOND D'ÉTOILES ANIMÉ (vidéo en boucle) ========== */
+/* La vidéo remplace l'ancienne image étoile.svg. Elle est dans un conteneur (.hero__etoiles)
+   qui la découpe en diagonale : le bord reprend exactement celui de l'ancienne image (mesuré à
+   1 px près sur 2 tailles d'écran). Le côté gauche reste donc rouge, avec le titre par-dessus.
+   Le découpage est sur le conteneur et l'animation d'entrée sur la vidéo : les étoiles
+   arrivent en tournant DANS la découpe, et la diagonale reste alignée avec les bandes. */
+.hero__etoiles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  /* Fond noir : visible un instant pendant que les étoiles arrivent */
+  background: #000000;
+  /* Bord en haut / bas : voir les variables --bord-haut et --bord-pente (section des bandes,
+     plus bas) : les bandes blanche et noire utilisent la même diagonale. */
+  clip-path: polygon(
+    var(--bord-haut) 0,
+    100% 0,
+    100% 100%,
+    calc(var(--bord-haut) - var(--bord-pente)) 100%
+  );
+}
+
+video.etoile {
+  top: 0;
+  right: auto;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Le gris (≈ #737373) est directement dans la vidéo : aucun filtre, donc rendu net
+     et plus léger pour le navigateur. */
+  filter: none;
+}
+
+/* Invisible tant que js/animations.js n'a pas ajouté .est-pret (1re image chargée) */
+video.etoile {
+  opacity: 0;
+}
+
+video.etoile.est-pret {
+  opacity: 1;
+}
+
+.page-prete video.etoile.est-pret {
+  /* Les étoiles glissent depuis la droite jusqu'à leur place, dans la découpe en diagonale */
+  animation: glisseEtoiles 0.9s cubic-bezier(0.2, 0.85, 0.25, 1) 0.3s backwards;
+}
+
+@keyframes glisseEtoiles {
+  from { translate: 100% 0; }
+  to   { translate: 0 0; }
+}
+
+/* Comme avant, les étoiles ne s'affichent pas sur tablette / mobile (≤ 1100 px).
+   display: none évite aussi de télécharger la vidéo pour rien. */
+@media (max-width: 1100px) {
+  .hero__etoiles {
+    display: none;
+  }
+}
+
+
+/* ========== BANDES BLANCHE ET NOIRE (toujours visibles) ========== */
+/* Avant, ces bandes n'apparaissaient que si la fenêtre était assez basse : les étoiles les
+   recouvraient sinon. Elles sont maintenant dessinées exactement le long du bord des étoiles
+   (même diagonale que le clip-path de la vidéo), de haut en bas, à toutes les tailles.
+   Pour changer leur épaisseur : modifie les deux variables ci-dessous. */
+.hero__content {
+  --bande-noire: 3.5vw;
+  --bande-blanche: 3.5vw;
+  /* Hauteur « utile » : celle de l'écran, mais plafonnée sur les fenêtres très hautes et étroites
+     (sinon la diagonale irait se coller sur le titre). */
+  --hh: min(100vh, 62.5vw);
+  /* position du bord des étoiles en haut du hero, et décalage horizontal sur toute la hauteur */
+  --bord-haut: calc(82.85% - 0.1658 * var(--hh));
+  --bord-pente: calc(0.5528 * var(--hh));
+}
+
+.hero__bandes {
+  position: absolute;
+  inset: 0;
+  z-index: 1;               /* sous le texte (.hero__left vient après dans le HTML) */
+  pointer-events: none;
+}
+
+.hero__bande {
+  position: absolute;
+  inset: 0;
+}
+
+/* --rogne = fraction de la hauteur déjà « dessinée » (0 = rien, 1 = bande complète).
+   @property permet d'animer ce nombre : le bas de la bande descend le long de la diagonale
+   sans la déformer, comme la barre rouge sous « Contact » qui se déploie. */
+@property --rogne {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 1;
+}
+
+.hero__bande--noire {
+  background: #000000;
+  clip-path: polygon(
+    calc(var(--bord-haut) - var(--bande-noire)) 0,
+    var(--bord-haut) 0,
+    calc(var(--bord-haut) - var(--bord-pente) * var(--rogne)) calc(var(--rogne) * 100%),
+    calc(var(--bord-haut) - var(--bord-pente) * var(--rogne) - var(--bande-noire)) calc(var(--rogne) * 100%)
+  );
+}
+
+.hero__bande--blanche {
+  background: #ffffff;
+  clip-path: polygon(
+    calc(var(--bord-haut) - var(--bande-noire) - var(--bande-blanche)) 0,
+    calc(var(--bord-haut) - var(--bande-noire)) 0,
+    calc(var(--bord-haut) - var(--bord-pente) * var(--rogne) - var(--bande-noire)) calc(var(--rogne) * 100%),
+    calc(var(--bord-haut) - var(--bord-pente) * var(--rogne) - var(--bande-noire) - var(--bande-blanche)) calc(var(--rogne) * 100%)
+  );
+}
+
+/* Même mouvement et même courbe que la barre rouge sous « Contact » (entreeRegle),
+   mais de haut en bas. La blanche part d'abord, la noire la suit juste après. */
+@keyframes rogneBande {
+  from { --rogne: 0; }
+  to   { --rogne: 1; }
+}
+
+.page-prete .hero__bande--blanche {
+  animation: rogneBande 0.42s cubic-bezier(0.7, 0, 0.3, 1) 0.1s backwards;
+}
+
+.page-prete .hero__bande--noire {
+  animation: rogneBande 0.42s cubic-bezier(0.7, 0, 0.3, 1) 0.3s backwards;
+}
+
+@media (min-width: 1101px) {
+  /* L'ancienne forme noire dépassait de façon aléatoire à gauche des étoiles :
+     les bandes ci-dessus la remplacent. */
+  .hero__content::after {
+    display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .hero__bandes {
+    display: none;
   }
 }

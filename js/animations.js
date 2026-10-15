@@ -40,7 +40,9 @@
     { selecteur: '.competences__item', type: 'monte', decalage: 140 },
     { selecteur: '.contact__form', type: 'coup', base: 150 },
     { selecteur: '.contact__field', type: 'monte', base: 450, decalage: 120 },
-    { selecteur: '.apropos__card', type: 'coup', base: 150 },
+    /* « monte » (fondu + montée) plutôt que « coup » (inclinaison) : la carte est grande
+       et pleine de texte, une inclinaison animée la faisait saccader */
+    { selecteur: '.apropos__card', type: 'monte', base: 150 },
     { selecteur: '.apropos__photo-col', type: 'monte', base: 450 },
     { selecteur: '.apropos__text', type: 'fondu', base: 550 },
     { selecteur: '.apropos__decor', type: 'monte', base: 700 }
@@ -266,7 +268,60 @@
      DÉMARRAGE
      ============================================================ */
 
+  /* ---------- Vidéo des étoiles du hero ---------- */
+  /* La vidéo ne joue que si : l'écran est assez large (≥ 1101 px, sinon elle est cachée),
+     « réduire les animations » n'est pas activé, et le hero est visible à l'écran.
+     Sinon elle est en pause (on voit la 1re image) : le processeur ne travaille pas pour rien. */
+  function initVideoEtoiles() {
+    const video = document.querySelector('video.etoile');
+    if (!video) return;
+
+    const grandEcran = window.matchMedia('(min-width: 1101px)');
+    const sansAnimation = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let visible = true;
+
+    /* Sur grand écran, on charge la vidéo tout de suite : elle est ainsi prête
+       pendant l'animation d'entrée des étoiles. */
+    if (grandEcran.matches) {
+      video.preload = 'auto';
+      video.load();
+    }
+
+    /* La vidéo reste invisible tant que sa 1re image n'est pas chargée : sinon on verrait
+       un rectangle vide faire l'animation d'entrée. La classe est-pret lance l'entrée
+       (voir animations.css). Le délai de 5 s sert de sécurité si le chargement échoue. */
+    const pret = () => video.classList.add('est-pret');
+    if (video.readyState >= 2) {
+      pret();
+    } else {
+      video.addEventListener('loadeddata', pret, { once: true });
+      video.addEventListener('error', pret, { once: true });
+      setTimeout(pret, 5000);
+    }
+
+    function majLecture() {
+      if (visible && grandEcran.matches && !sansAnimation.matches) {
+        const lecture = video.play();
+        if (lecture && lecture.catch) lecture.catch(() => {});
+      } else {
+        video.pause();
+      }
+    }
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entrees) => {
+        visible = entrees[entrees.length - 1].isIntersecting;
+        majLecture();
+      }).observe(video.parentElement);
+    }
+
+    grandEcran.addEventListener('change', majLecture);
+    sansAnimation.addEventListener('change', majLecture);
+    majLecture();
+  }
+
   function init() {
+    initVideoEtoiles();
     initTransitionNavigation();
     initRevelations();
     initChangementProjet();

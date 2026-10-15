@@ -63,6 +63,13 @@
     <!-- ===== SECTION 1 : ACCUEIL / HERO ===== -->
     <section id="accueil" class="hero" aria-label="Accueil">
       <div class="hero__content">
+        <!-- Bandes blanche et noire le long de la diagonale des étoiles : toujours visibles,
+             peu importe la taille de la fenêtre (voir animations.css) -->
+        <div class="hero__bandes" aria-hidden="true">
+          <span class="hero__bande hero__bande--blanche"></span>
+          <span class="hero__bande hero__bande--noire"></span>
+        </div>
+
         <div class="hero__left">
           <div class="hero__text">
             <div class="hero__heading">
@@ -81,7 +88,16 @@
             </div>
           </div>
         </div>
-        <img class="etoile" src="./assets/étoile.svg" alt="" aria-hidden="true" />
+        <!-- Fond d'étoiles animé : vidéo en boucle parfaite (muette, sans contrôles).
+             La lecture est lancée par js/animations.js (seulement sur grand écran, et en pause
+             quand le hero n'est pas visible). Sans JS, le fond reste noir.
+             L'ancienne image fixe étoile.svg est gardée dans assets/ au cas où. -->
+        <div class="hero__etoiles" aria-hidden="true">
+          <video class="etoile etoile--video" muted loop playsinline preload="none"
+                 disablepictureinpicture tabindex="-1" aria-hidden="true">
+            <source src="./assets/etoiles-boucle.mp4" type="video/mp4" />
+          </video>
+        </div>
 
         <img class="bureau" src="./assets/bureau.png" alt="" aria-hidden="true" />
 
@@ -144,10 +160,7 @@
             <img class="competences__logo" src="./assets/logo_maya.png" alt="" aria-hidden="true" />" />
             <h3 class="competences__item-title">ANIMATION 3D</h3>
             <p class="competences__text">
-              Je possède un niveau intermédiaire sur Autodesk Maya, ce qui me permet de réaliser des modèles 3D, de
-              travailler les textures, les matériaux et l’éclairage de mes scènes. Je suis également capable de
-              manipuler des rigs et de créer des animations simples. Je continue à améliorer ma maîtrise du logiciel
-              afin de réaliser des projets 3D plus détaillés et de qualité professionnelle.
+              J'utilise Autodesk Maya pour donner vie à mes personnages. Je prépare des rigs, c'est-à-dire des squelettes de contrôle, et je crée des animations simples en travaillant le mouvement et le rythme. Je continue de perfectionner cette compétence afin de réaliser des animations plus fluides et plus expressives.
             </p>
           </article>
 
@@ -155,8 +168,7 @@
             <img class="competences__logo" src="./assets/logo_maya.png" alt="" aria-hidden="true" />" />
             <h3 class="competences__item-title">MODÉLISATION 3D</h3>
             <p class="competences__text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.
+             Je conçois des personnages et des environnements 3D dans Autodesk Maya, Je travaille aussi les textures, les matériaux et l'éclairage afin de donner à chaque scène une ambiance cohérente.
             </p>
           </article>
         </div>
