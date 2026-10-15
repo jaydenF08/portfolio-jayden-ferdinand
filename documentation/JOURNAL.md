@@ -286,3 +286,516 @@ GitHub Copilot
 # Résultat : 
 
 Copilot m'a aidé à mettre en place le chargement des projets depuis un fichier JSON au lieu d'écrire les cartes à la main. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Prompt : 
+
+tu vois la vidéo que je t'ai envoyé, j'aimerais cette même effet en loop pour mes étoiles gris et noir et si se n'est pas possible on peut trouver une autre solution pour que se soit vraiment accurate
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+J'ai obtenu une vidéo en boucle parfaite (mp4) qui reproduit l'effet d'étoiles gris et noir de ma vidéo, utilisée comme fond de la page d'accueil. Elle est découpée selon la diagonale du hero et se met en pause quand elle n'est pas visible.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+y'a t-il un moyen que le mp4 ai une meilleure qualité, il s'affiche mais les grains rend le tout horrible
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+La vidéo a été ré-encodée en 1920x1080 avec un meilleur réglage de compression : les grains et le flou ont disparu et l'image est nette.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+peut tu faire en sorte que ma barre blanche et ma barre noir s'affiche en plein écran parce qu'on les voit seulement quand je réduit le height de ma fenêtre mais je veux qu'on l'es voit dans n'importe quel largeur et hauteur
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+Les barres blanche et noire suivent maintenant la diagonale des étoiles et restent visibles quelle que soit la largeur ou la hauteur de la fenêtre.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+peut tu réduire la largeur de la barre noir sv
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+La barre noire est plus fine, ce qui équilibre mieux la barre blanche.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+lorsque j'actualise l'animation des étoiles qui se déplace pour se mettre en place dans la première page n'est plus appliqué, il y'a se qui a l'air être mon étoile affiches qui se met en place et disparait pourrais tu me regler ce probleme
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+L'animation d'entrée des étoiles est revenue. Elle attend maintenant que la vidéo soit chargée avant de se lancer, ce qui évite l'image qui apparaît puis disparaît.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+finalement enlève mon ancienne photo d'étoile affiches qu'on repère à l'animation d'entré
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+L'ancienne image fixe (affiche) n'est plus utilisée : on ne la voit plus pendant l'animation d'entrée.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+on voit quand même le carré sans image qui apparait et qui fait l'animation à l'animation d'entré
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+Le carré vide qui s'animait a été corrigé : la vidéo reste invisible tant que sa première image n'est pas chargée, puis elle glisse en place.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+parfait maintenant fait en sorte que à l'animation d'entré mon étoilae affiche slide de gauche vers là ou ils doivent être placé
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+J'ai ajouté une animation où les étoiles glissent vers leur position à l'entrée (d'abord de la gauche, ce que j'ai corrigé juste après).
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+pardon inverse les coté je voulais dire à droite
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+Le sens de l'animation est inversé : les étoiles arrivent maintenant de la droite.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+maintenant fait en sorte que la barre blanche et la barre noir ait une animation qui rogne du haut vers le bas mais pas en même temps, je veux la même animation que la ligne rouge en dessous de contact en gros
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+Les barres blanche et noire se dévoilent de haut en bas, l'une après l'autre, comme la ligne rouge sous « Contact ».
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+fait en sorte que l'animation soit plus rapide
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+L'animation des barres a été accélérée.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+plus rapide dès que l'animation entré s'active
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+Les barres démarrent plus tôt, dès que l'animation d'entrée s'active.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+ok pas aussi rapide
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+J'ai ralenti un peu l'animation pour trouver un rythme intermédiaire qui me convient.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+peut tu faire en sorte que mon titre projets ai l'air plus au style de persona 5
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+J'ai obtenu un titre « PROJETS » avec des lettres façon papier découpé, inclinées, comme dans Persona 5.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+fait en sorte que le titre se rapproche plus de ce style avec des carré noir ou blanc en arriere plan des lettres
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+Une deuxième version avec des dalles noires et blanches derrière chaque lettre, proche du logo de Persona 5. Finalement, je suis revenu à mon titre d'origine.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+finalement je suis retourné à la case départ avant de changer mon titre projets
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+J'ai gardé mon titre « Projets » d'origine, sans les changements de style.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+améliore le résumé de mon jeu Tenacity "Parcours des obstacles périlleux et récupère la pomme d'or pour réussir"
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+J'ai obtenu un résumé plus professionnel et plus vivant pour mon jeu Tenacity, prêt à être mis dans mon fichier JSON.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+J'ai téléchargé des assets, puis je l'es ai incorporé sur le logiciel tiled […] rend plus professionel ce texte [texte complet à remettre : seule une version abrégée est conservée]
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+J'ai obtenu une description plus professionnelle de mon travail dans Tiled (assets, tuiles et niveau), pour le projet de jeu.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+donne une mini histoire pour ce personnage juste pour le sommaire
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+Claude a proposé une mini histoire pour mon personnage, à utiliser dans le sommaire du projet.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+finalement fait juste le décrirre et vraiment mini
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+J'ai obtenu une description très courte du personnage, au lieu d'une histoire, pour le sommaire.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+de quel show vient ce monstre
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+Claude a identifié la créature : il s'agit probablement de la Bête (The Beast) de la série Over the Garden Wall.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+Création d'un personnage 3D fictif d'horreur, les texture de son costume et son corps est inspiré de slender man et son visage et sa peau est inspiré du beast de over garden — rend le plus professionnel
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+J'ai obtenu un texte professionnel pour le projet « Personnage 3D », qui explique les inspirations (Slender Man et The Beast) de façon claire.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+J'ai créer un environnement blanc qui est vide […] klonoa […] cité copié de nier automata — rend le plus professionnel [texte complet à remettre : seule une version abrégée est conservée]
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+J'ai obtenu un texte professionnel pour le projet « Environnement 3D » (environnement blanc vide, inspirations Klonoa et cité de NieR: Automata).
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+En équipe, nous avons rassemblé des élélment […] tentacule, champignon lumineux — rend le plus professionnel [texte complet à remettre : seule une version abrégée est conservée]
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+J'ai obtenu un texte professionnel pour le projet en équipe, qui décrit les éléments rassemblés (tentacules, champignon lumineux).
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+essaier de Visualisation d'un monde lucide — rend le professionnel
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+J'ai obtenu une version plus professionnelle du résumé du projet « À travers deux esprits » (visualisation d'un monde lucide).
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+fait moi deux texte différent professionel pour animation 3d et modelisation
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+J'ai obtenu deux paragraphes professionnels différents pour les cartes « Animation 3D » et « Modélisation 3D » de la section Compétences.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+peut tu faire en sorte bien adapter ses pages en mobile exemple à l'accueil il ya l'image qui mdépasse à droite, pour à propos c très mal mal placé, pour compétence la barre blanche est trop collé vers la droite et pour contact le formulaire devrait être plus au milieu
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+J'ai obtenu un fichier mobile.css qui adapte l'accueil, les compétences, le contact et à propos aux petits écrans : plus aucun débordement à droite, formulaire centré, barre blanche décollée du bord.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+la genre de couronne rouge coupe la page d'en haut pourrais tu faire en sorte de le rendre plus propre et plus persona 5
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+Le zigzag rouge de la page À propos a été remplacé par une dalle rouge inclinée avec une dalle blanche décalée derrière le titre, plus un grand triangle rouge dans le coin.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+pas juste mobile les deux format
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+Claude a confirmé que le nouveau décor d'À propos s'applique à la fois à l'ordinateur et au mobile.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+peut tu rendre ma page contact plus persona 5 aussi
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+J'ai obtenu une page Contact style Persona 5 : formulaire rouge incliné avec dalle blanche, étiquettes noires, champs aux angles vifs, bouton « ENVOYER » et décor diagonal.
+
+# Date : 
+
+14 octobre 2026
+
+# Prompt : 
+
+complète cette structure pour tout les prompts que je t'ai demandé de faire aujourd'hui mot pour mot, la date et tout
+
+# Outil : 
+
+Claude (Claude Code)
+
+# Résultat : 
+
+J'ai obtenu ce document qui regroupe tous mes prompts du jour dans la structure demandée.
+
+# Date : 
+
+14 octobre 2026
