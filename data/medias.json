@@ -1,0 +1,140 @@
+{
+  "projets": {
+    "tenacity": {
+      "accent": "#e10720",
+      "fit": "cover",
+      "position": "center",
+      "filtre": "none",
+      "rendu": "pixelated",
+      "images": [
+        {
+          "src": "./assets/tenafond.png",
+          "full": null,
+          "legende": "Capture de l'écran titre du jeu (jouable sur itch.io)"
+        }
+      ],
+      "role": "Projet individuel — concepteur de niveau et programmeur : j'ai intégré les assets dans Tiled pour construire le premier niveau, puis programmé les déplacements du personnage, le power-up et la musique.",
+      "techniques": [
+        "Conception de niveau 2D",
+        "Programmation de jeu (déplacements, power-up, musique)"
+      ]
+    },
+    "character": {
+      "accent": "#e10720",
+      "fit": "cover",
+      "position": "center 40%",
+      "filtre": "contrast(1.05)",
+      "images": [
+        {
+          "src": "./assets/ten copie 1.png",
+          "full": null,
+          "legende": "Rendu final du personnage"
+        }
+      ],
+      "role": "Projet individuel — modélisateur et texturier : j'ai conçu le personnage, modélisé son corps et travaillé les textures du costume, de la peau et du visage.",
+      "techniques": [
+        "Modélisation 3D",
+        "Texturage"
+      ]
+    },
+    "spirits": {
+      "accent": "#e10720",
+      "fit": "cover",
+      "position": "center",
+      "filtre": "grayscale(1)",
+      "images": [
+        {
+          "src": "./assets/chat.png",
+          "full": null,
+          "legende": "Rendu final : le chat noir dans l'environnement blanc"
+        }
+      ],
+      "processus": {
+        "titre": "Processus de création",
+        "intro": "De l'idée d'un chat noir en quête de lui-même jusqu'à l'image finale : les grandes étapes de « À travers deux esprits ».",
+        "etapes": [
+          {
+            "titre": "Idée et intention",
+            "texte": "Je pars d'une mini histoire : un chat noir en quête de lui-même. Je veux un monde qui évoque des souvenirs flous : vide, mais étrangement familier.",
+            "image": "./assets/processus/spirits-01-idee.jpg",
+            "legende": "Premières notes et esquisses"
+          },
+          {
+            "titre": "Références et inspirations",
+            "texte": "Le chat est une réinterprétation de Toro, la mascotte de Doko Demo Issho, et l'univers s'inspire de la Cité copiée de NieR: Automata. Je rassemble des images de ces deux références pour garder une direction artistique cohérente.",
+            "images": [
+              {
+                "src": "./assets/processus/spirits-02-references.jpg",
+                "legende": "Toro, la mascotte de Doko Demo Issho (référence du chat)",
+                "format": "portrait"
+              },
+              {
+                "src": "./assets/processus/spirits-02-cite.jpg",
+                "legende": "Cité copiée de NieR: Automata (référence de l'univers)",
+                "format": "large"
+              }
+            ]
+          },
+          {
+            "titre": "Déconstruction et modélisation du chat",
+            "texte": "Dans Autodesk Maya, je déconstruis le design de Toro pour l'adapter à l'identité que je veux donner à mon personnage : formes simplifiées, grandes oreilles pointues, silhouette noire bien lisible.",
+            "image": "./assets/processus/spirits-03-klonoa.jpg",
+            "legende": "Klonoa (référence pour la déconstruction)",
+            "format": "moyen"
+          },
+          {
+            "titre": "Création de l'environnement blanc",
+            "texte": "Je construis la cité en volumes clairs et épurés, entièrement blancs, pour que le chat noir ressorte et que le lieu paraisse vide, comme un souvenir qui s'efface.",
+            "image": "./assets/processus/spirits-04-environnement.jpg",
+            "legende": "Environnement en cours de construction"
+          },
+          {
+            "titre": "Lumière, composition et rendu",
+            "texte": "Je place la caméra et la lumière pour guider le regard vers le chat, puis je lance le rendu final.",
+            "image": "./assets/processus/spirits-05-rendu.jpg",
+            "legende": "Rendu final"
+          },
+          {
+            "titre": "Ambiance sonore",
+            "texte": "Les ambiances sonores nous plongent dans l'atmosphère silencieuse et nostalgique du monde. La première bande sonore, qui joue au début de l'histoire, vient de Splatoon 3 (Order Sector). La deuxième, qui joue à la fin de l'histoire, a été composée par moi.",
+            "audios": [
+              {
+                "src": "./assets/processus/spirits-ambiance.mp3",
+                "legende": "Ambiance sonore du projet"
+              },
+              {
+                "src": "./assets/processus/spirits-ambiance-fin.mp3",
+                "legende": "Ambiance de la fin de l'histoire (créée par moi)"
+              }
+            ]
+          }
+        ]
+      },
+      "role": "Projet individuel — réalisation complète : écriture de la mini histoire, design du chat, modélisation, création de l'environnement, éclairage et rendu.",
+      "techniques": [
+        "Modélisation 3D",
+        "Création d'environnement",
+        "Éclairage et rendu"
+      ]
+    },
+    "environment": {
+      "accent": "#e10720",
+      "fit": "cover",
+      "position": "center 60%",
+      "filtre": "grayscale(1) contrast(1.15)",
+      "images": [
+        {
+          "src": "./assets/environnement.png",
+          "full": null,
+          "legende": "Rendu final de l'environnement"
+        }
+      ],
+      "role": "Projet d'équipe — mon rôle : participation à la modélisation et à la mise en place des éléments du décor (tentacules, champignons lumineux) pour créer l'atmosphère onirique.",
+      "techniques": [
+        "Modélisation 3D",
+        "Composition et éclairage",
+        "Ambiance onirique"
+      ]
+    }
+  }
+}
