@@ -110,7 +110,7 @@ function initModalProjet() {
     sousTitre.textContent = projet.subtitle || '';
     tags.innerHTML = buildProjectTags(projet);
     description.innerHTML = buildProjectDetails(projet);
-    if (projet.lien && projet.lien !== '#') {
+    if ((projet.id === 'tenacity' || projet.id === 'spirits') && projet.lien && projet.lien !== '#') {
       lien.hidden = false;
       lien.href = projet.lien;
     } else {

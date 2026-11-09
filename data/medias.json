@@ -29,6 +29,26 @@
           "src": "./assets/ten copie 1.png",
           "full": null,
           "legende": "Rendu final du personnage"
+        },
+        {
+          "src": "./assets/perso 2.jpg",
+          "full": null,
+          "legende": "Personnage 3D - vue 1"
+        },
+        {
+          "src": "./assets/perso 3.jpg",
+          "full": null,
+          "legende": "Personnage 3D - vue 2"
+        },
+        {
+          "src": "./assets/perso 4.jpg",
+          "full": null,
+          "legende": "Personnage 3D - vue 3"
+        },
+        {
+          "src": "./assets/perso1.jpg",
+          "full": null,
+          "legende": "Personnage 3D - vue 4"
         }
       ],
       "role": "Projet individuel — modélisateur et texturier : j'ai conçu le personnage, modélisé son corps et travaillé les textures du costume, de la peau et du visage.",
@@ -127,6 +147,21 @@
           "src": "./assets/environnement.png",
           "full": null,
           "legende": "Rendu final de l'environnement"
+        },
+        {
+          "src": "./assets/environnement 2.png",
+          "full": null,
+          "legende": "Environnement 3D - vue 2"
+        },
+        {
+          "src": "./assets/environnement 3.png",
+          "full": null,
+          "legende": "Environnement 3D - vue 3"
+        },
+        {
+          "src": "./assets/environnement 4.jpg",
+          "full": null,
+          "legende": "Environnement 3D - vue 4"
         }
       ],
       "role": "Projet d'équipe — mon rôle : participation à la modélisation et à la mise en place des éléments du décor (tentacules, champignons lumineux) pour créer l'atmosphère onirique.",

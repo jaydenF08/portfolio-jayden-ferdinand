@@ -399,8 +399,52 @@
         if (!b[1]) return;
         var sec = creer('section', 'projet-modale__bloc bloc-ajoute');
         sec.innerHTML = '<h4 class="projet-modale__bloc-titre">' + b[0] + '</h4><p class="projet-modale__bloc-texte">' + b[1] + '</p>';
+
+        if (b[0] === 'TECHNIQUES' && m.techniqueVideo && m.techniqueVideo.src) {
+          var figureVideo = creer('figure', 'processus__media');
+          var videoTech = creer('video');
+          videoTech.controls = true;
+          videoTech.preload = 'metadata';
+          videoTech.playsInline = true;
+          videoTech.src = m.techniqueVideo.src;
+          figureVideo.appendChild(videoTech);
+
+          if (m.techniqueVideo.legende) {
+            figureVideo.appendChild(creer('figcaption', null, echapper(m.techniqueVideo.legende)));
+          }
+
+          sec.appendChild(figureVideo);
+        }
+
         desc.appendChild(sec);
       });
+
+      if ((id === 'character' || id === 'environment') && images.length > 1) {
+        var imagesSousTechniques = images.slice(1);
+        var sectionImages = creer('section', 'projet-modale__bloc bloc-ajoute');
+        sectionImages.innerHTML = '<h4 class="projet-modale__bloc-titre">IMAGES</h4>';
+        var galerieTechniques = creer('div', 'galerie');
+
+        imagesSousTechniques.forEach(function (im, i) {
+          var b = creer('button', 'galerie__mini');
+          b.type = 'button';
+          b.setAttribute('aria-label', 'Image ' + (i + 1));
+          b.innerHTML = '<img src="' + echapper(im.src) + '" alt="" />';
+          b.addEventListener('click', function () {
+            el.image.src = im.src;
+            el.image.alt = im.legende || el.titre.textContent;
+
+            var legende = el.wrap.querySelector('.projet-modale__legende');
+            if (legende) {
+              legende.textContent = im.legende || '';
+            }
+          });
+          galerieTechniques.appendChild(b);
+        });
+
+        sectionImages.appendChild(galerieTechniques);
+        desc.appendChild(sectionImages);
+      }
     }
 
     /* miniatures s'il y a plusieurs images */
