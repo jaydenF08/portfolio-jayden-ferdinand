@@ -27,6 +27,11 @@ function createProjectCard(project, index) {
           <p class="project-card__fondu-texte">${project.description ? project.description : ''}</p>
         </div>
       </div>
+      <!-- Pied de carte : tags du projet + invitation à cliquer (décoratif, ne bloque pas le clic) -->
+      <div class="project-card__pied" aria-hidden="true">
+        <span class="project-card__tags">${(project.tags || []).slice(0, 3).map((tag) => `<span class="project-card__tag">${tag}</span>`).join('')}</span>
+        <span class="project-card__cta">Voir le projet ▸</span>
+      </div>
     </div>
   `;
 

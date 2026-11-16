@@ -576,3 +576,191 @@ body.visionneuse-ouverte {
     max-width: 240px;
   }
 }
+
+/* ---------- 6. CONTACT : une seule colonne centrée (titre, courriel, formulaire alignés) ---------- */
+@media (min-width: 901px) {
+  .contact__wrap {
+    width: min(100%, 900px);
+    margin-inline: auto;
+  }
+
+  /* le formulaire prend toute la largeur de la colonne : son bord gauche s'aligne sur le titre */
+  .contact .contact__form {
+    width: calc(100% - 14px);
+    margin-inline: 0;
+  }
+}
+
+/* étiquette « Écris-moi directement » : texte blanc sur dalle rouge, bien lisible */
+.contact__courriel-etiquette {
+  width: auto;
+  padding: 0.2em 0.9em 0.15em 0.6em;
+  background: #e10720;
+  color: #ffffff;
+  font-size: 1.2rem;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 0.5em) 100%, 0 100%);
+}
+
+.contact__courriel {
+  gap: 0.8rem 0.9rem;
+}
+
+
+/* ---------- 7. COMPÉTENCES : angles vifs comme le reste du site ---------- */
+.competences__grid {
+  border-radius: 0;
+  border: 3px solid #ffffff;
+}
+
+.competences__shadow {
+  border-radius: 0;
+  background: #ffffff;
+}
+
+.competences__logo {
+  border-radius: 0;
+}
+
+/* icônes un peu plus grandes pour qu'on lise le badge Maya */
+.competences__logo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+}
+
+/* ---------- 8. À PROPOS : angles vifs + texte en deux paragraphes ---------- */
+.apropos .apropos__card,
+.apropos__card::before {
+  border-radius: 0;
+}
+
+.apropos__text + .apropos__text {
+  margin-top: 1rem;
+}
+
+/* ---------- 9. À PROPOS : plus d'espace en haut (le titre ne passe plus sous la barre de navigation) ---------- */
+.apropos {
+  /* 58 px = hauteur de la barre de navigation fixe */
+  padding-top: calc(58px + clamp(2.5rem, 6vw, 6rem));
+  padding-bottom: clamp(4rem, 9vw, 8rem);
+}
+
+.apropos__card-wrap {
+  margin-top: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+@media (max-width: 900px) {
+  .apropos {
+    padding-top: calc(58px + 2.5rem);
+  }
+}
+
+/* ---------- 10. CONTACT : le titre ne passe plus sous la barre de navigation ---------- */
+.contact {
+  /* 58 px = hauteur de la barre de navigation fixe */
+  padding-top: calc(58px + clamp(1.5rem, 3vw, 3rem));
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+@media (max-width: 900px) {
+  .contact {
+    padding-top: calc(58px + 1.5rem);
+  }
+}
+
+/* ---------- 11. PROJETS : espace sous la navigation, pied de carte, numéros lisibles ---------- */
+.projects-page {
+  /* 58 px = hauteur de la barre de navigation fixe : le titre n'est plus rogné */
+  padding-top: calc(58px + 2rem);
+}
+
+.project-card__image {
+  position: relative;
+}
+
+.project-card__pied {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 1.6rem 0.6rem 0.55rem;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.8));
+  pointer-events: none;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.project-card__tag {
+  padding: 0.15em 0.55em;
+  background: #f4f1e8;
+  color: #111111;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.project-card__cta {
+  flex-shrink: 0;
+  padding: 0.3em 0.9em 0.25em 0.7em;
+  background: #e10720;
+  color: #ffffff;
+  font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  clip-path: polygon(0.4em 0, 100% 0, calc(100% - 0.4em) 100%, 0 100%);
+}
+
+/* le texte du survol laisse la place au pied de carte */
+.project-card__fondu {
+  padding-bottom: 3rem;
+}
+
+/* numéro de la carte : plus lisible, à droite */
+.project-card__media::before {
+  text-align: right;
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: 2px 2px 0 #000000;
+}
+
+@media (max-width: 760px) {
+  .project-card__tag:nth-child(n+3) {
+    display: none;
+  }
+}
+
+/* ---------- 12. CARTES PROJETS : noir et blanc au repos, couleur d'origine au survol ---------- */
+.project-card .project-card__media {
+  transition: filter 0.35s ease;
+}
+
+.project-card:hover .project-card__media,
+.project-card:focus-within .project-card__media,
+.project-card .project-card__media.est-actif {
+  filter: none;
+}
+
+/* Tenacity : l'image est très large, on la montre en entier sur son fond lavande */
+.project-card--tenacity .project-card__media {
+  background-color: #b490e2;
+  /* !important : le titre du jeu doit rester entier, quelle que soit la valeur de "fit" dans medias.json */
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat;
+}
+
+/* le texte du survol ne cache plus l'image : dégradé sombre en bas seulement */
+.project-card__fondu {
+  justify-content: flex-end;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.7) 45%, rgba(0, 0, 0, 0) 85%);
+}

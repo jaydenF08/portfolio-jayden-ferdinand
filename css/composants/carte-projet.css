@@ -110,11 +110,11 @@ img {
 }
 
 .project-card--tenacity .project-card__media {
-  background-image: url("../../assets/tenafond.png");
+  background-image: url("../../assets/tenacity-couleur.png");
 }
 
 .project-card--character .project-card__media {
-  background-image: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(0,0,0,0.08)), url("../../assets/ten copie 1.png");
+  background-image: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(0,0,0,0.08)), url("../../assets/personnage-couleur.png");
 }
 
 .project-card--spirits .project-card__media {
@@ -122,7 +122,7 @@ img {
 }
 
 .project-card--environment .project-card__media {
-  background-image: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(0,0,0,0.08)), url("../../assets/environnement.png");
+  background-image: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(0,0,0,0.08)), url("../../assets/environnement-couleur.png");
 }
 
 @media (max-width: 760px) {
@@ -261,4 +261,3 @@ img {
     transform: translate(6px, 6px);
   }
 }
- 

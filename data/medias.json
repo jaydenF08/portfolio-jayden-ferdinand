@@ -2,13 +2,13 @@
   "projets": {
     "tenacity": {
       "accent": "#e10720",
-      "fit": "cover",
+      "fit": "contain",
       "position": "center",
-      "filtre": "none",
+      "filtre": "grayscale(1) contrast(1.1)",
       "rendu": "pixelated",
       "images": [
         {
-          "src": "./assets/tenafond.png",
+          "src": "./assets/tenacity-couleur.png",
           "full": null,
           "legende": "Capture de l'écran titre du jeu (jouable sur itch.io)"
         }
@@ -23,10 +23,10 @@
       "accent": "#e10720",
       "fit": "cover",
       "position": "center 40%",
-      "filtre": "contrast(1.05)",
+      "filtre": "grayscale(1) contrast(1.1)",
       "images": [
         {
-          "src": "./assets/ten copie 1.png",
+          "src": "./assets/personnage-couleur.png",
           "full": null,
           "legende": "Rendu final du personnage"
         },
@@ -61,7 +61,7 @@
       "accent": "#e10720",
       "fit": "cover",
       "position": "center",
-      "filtre": "grayscale(1)",
+      "filtre": "grayscale(1) contrast(1.1)",
       "images": [
         {
           "src": "./assets/chat.png",
@@ -75,9 +75,7 @@
         "etapes": [
           {
             "titre": "Idée et intention",
-            "texte": "Je pars d'une mini histoire : un chat noir en quête de lui-même. Je veux un monde qui évoque des souvenirs flous : vide, mais étrangement familier.",
-            "image": "./assets/processus/spirits-01-idee.jpg",
-            "legende": "Premières notes et esquisses"
+            "texte": "Je pars d'une mini histoire : un chat noir en quête de lui-même. Je veux un monde qui évoque des souvenirs flous : vide, mais étrangement familier."
           },
           {
             "titre": "Références et inspirations",
@@ -104,15 +102,11 @@
           },
           {
             "titre": "Création de l'environnement blanc",
-            "texte": "Je construis la cité en volumes clairs et épurés, entièrement blancs, pour que le chat noir ressorte et que le lieu paraisse vide, comme un souvenir qui s'efface.",
-            "image": "./assets/processus/spirits-04-environnement.jpg",
-            "legende": "Environnement en cours de construction"
+            "texte": "Je construis la cité en volumes clairs et épurés, entièrement blancs, pour que le chat noir ressorte et que le lieu paraisse vide, comme un souvenir qui s'efface."
           },
           {
             "titre": "Lumière, composition et rendu",
-            "texte": "Je place la caméra et la lumière pour guider le regard vers le chat, puis je lance le rendu final.",
-            "image": "./assets/processus/spirits-05-rendu.jpg",
-            "legende": "Rendu final"
+            "texte": "Je place la caméra et la lumière pour guider le regard vers le chat, puis je lance le rendu final."
           },
           {
             "titre": "Ambiance sonore",
@@ -141,10 +135,10 @@
       "accent": "#e10720",
       "fit": "cover",
       "position": "center 60%",
-      "filtre": "grayscale(1) contrast(1.15)",
+      "filtre": "grayscale(1) contrast(1.1)",
       "images": [
         {
-          "src": "./assets/environnement.png",
+          "src": "./assets/environnement-couleur.png",
           "full": null,
           "legende": "Rendu final de l'environnement"
         },
