@@ -23,7 +23,8 @@
     "summary": " Création d'un être vivant, simple inspiré de n’importe quel univers.",
     "work": "J'ai conçu un personnage 3D fictif dans l'univers de l'horreur. Les textures du costume et du corps sont inspirées de Slender Man, tandis que le visage et la peau s'inspirent de la Bête de la série Over the Garden Wall.",
     "tools": ["Autodesk Maya"],
-    "lien": "https://cmontmorency365.sharepoint.com/:p:/r/sites/Section_fusion_A24_582314MO-1-2-3/_layouts/15/doc2.aspx?sourcedoc=%7B7AA9377F-C3FD-4BCC-B01D-4AF2F7EA903C%7D&file=Ferdinand_Jayden_PR2_concept_582314.pptx&action=edit&mobileredirect=true&or=WORD-WEB.BODY.NT&ct=1792018162850"
+    "lien": "https://cmontmorency365.sharepoint.com/:p:/r/sites/Section_fusion_A24_582314MO-1-2-3/_layouts/15/doc2.aspx?sourcedoc=%7B7AA9377F-C3FD-4BCC-B01D-4AF2F7EA903C%7D&file=Ferdinand_Jayden_PR2_concept_582314.pptx&action=edit&mobileredirect=true&or=WORD-WEB.BODY.NT&ct=1792018162850",
+    "galerie": ["./assets/personnage-couleur.png", "./assets/perso1.jpg", "./assets/perso 3.jpg", "./assets/perso 2.jpg", "./assets/perso 4.jpg"]
   },
   {
     "id": "spirits",
@@ -49,6 +50,7 @@
     "summary": "Une tentative de visualisation d'un monde de rêve lucide, où l'on garde conscience de son environnement même s'il est irréel.",
     "work": "Projet réalisé en équipe : des éléments déplacés, comme des tentacules et des champignons lumineux, créent une atmosphère onirique.",
     "tools": ["Autodesk Maya"],
-    "lien": "https://cmontmorency365.sharepoint.com/:p:/r/sites/Section_fusion_A24_582314MO-1-2-3/_layouts/15/Doc.aspx?sourcedoc=%7B739C1891-7711-48BE-AF9C-91E765D9FF60%7D&file=RICHARD_MULLER_FERDINAND_PROJET_CONCEPT_01.pptx&action=edit&mobileredirect=true&or=WORD-WEB.BODY.NT&ct=1792018213185"
+    "lien": "https://cmontmorency365.sharepoint.com/:p:/r/sites/Section_fusion_A24_582314MO-1-2-3/_layouts/15/Doc.aspx?sourcedoc=%7B739C1891-7711-48BE-AF9C-91E765D9FF60%7D&file=RICHARD_MULLER_FERDINAND_PROJET_CONCEPT_01.pptx&action=edit&mobileredirect=true&or=WORD-WEB.BODY.NT&ct=1792018213185",
+    "galerie": ["./assets/environnement-couleur.png", "./assets/environnement 2.png", "./assets/environnement 3.png", "./assets/environnement 4.jpg"]
   }
 ]

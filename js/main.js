@@ -45,7 +45,7 @@ function buildProjectDetails(project) {
     ['LOGICIELS', Array.isArray(project.tools) ? project.tools.join(', ') : '']
   ];
 
-  return sections
+  const blocs = sections
     .filter(([, content]) => content)
     .map(([title, content]) => `
       <section class="projet-modale__bloc">
@@ -54,6 +54,31 @@ function buildProjectDetails(project) {
       </section>
     `)
     .join('');
+
+  return blocs + buildProjectApercu(project);
+}
+
+/* Aperçu des images (miniatures sous LOGICIELS) : un clic sur une miniature
+   remplace l'image principale de la fenêtre. Liste = "galerie" dans projet.json. */
+function buildProjectApercu(project) {
+  if (!Array.isArray(project.galerie) || project.galerie.length < 2) {
+    return '';
+  }
+
+  const miniatures = project.galerie
+    .map((src, i) => `
+      <button type="button" class="apercu__mini${i === 0 ? ' est-actif' : ''}" data-src="${src}" aria-label="Voir l'image ${i + 1}">
+        <img src="${src}" alt="" loading="lazy" onerror="this.parentNode.remove()" />
+      </button>
+    `)
+    .join('');
+
+  return `
+    <section class="projet-modale__bloc projet-modale__apercu">
+      <h4 class="projet-modale__bloc-titre">IMAGES</h4>
+      <div class="apercu">${miniatures}</div>
+    </section>
+  `;
 }
 
 function buildProjectTags(project) {
@@ -110,6 +135,8 @@ function initModalProjet() {
     indexActuel = (index + listeProjets.length) % listeProjets.length;
     const projet = listeProjets[indexActuel];
     image.src = projet.image;
+    const legendeImage = document.querySelector('.projet-modale__legende');
+    if (legendeImage) legendeImage.hidden = false;
     image.alt = projet.title;
     titre.textContent = projet.title;
     sousTitre.textContent = projet.subtitle || '';
@@ -141,6 +168,17 @@ function initModalProjet() {
     const carte = evt.target.closest('.project-card');
     if (!carte) return;
     ouvrirModale(Number(carte.dataset.index));
+  });
+
+  // Clic sur une miniature de l'aperçu : on change l'image principale de la fenêtre
+  description.addEventListener('click', (evt) => {
+    const mini = evt.target.closest('.apercu__mini');
+    if (!mini) return;
+    image.src = mini.dataset.src;
+    // la légende « Rendu final » ne concerne que la 1re image : on la cache pour les autres vues
+    const legende = document.querySelector('.projet-modale__legende');
+    if (legende) legende.hidden = mini !== description.querySelector('.apercu__mini');
+    description.querySelectorAll('.apercu__mini').forEach((b) => b.classList.toggle('est-actif', b === mini));
   });
 
   boutonFermer.addEventListener('click', fermerModale);
