@@ -118,7 +118,7 @@ img {
 }
 
 .project-card--spirits .project-card__media {
-  background-image: linear-gradient(135deg, rgba(0,0,0,0.08), rgba(255,255,255,0.12)), url("../../assets/chat.png");
+  background-image: linear-gradient(135deg, rgba(0,0,0,0.08), rgba(255,255,255,0.12)), url("../../assets/spirits-couverture.png");
 }
 
 .project-card--environment .project-card__media {

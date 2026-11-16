@@ -812,3 +812,17 @@ body.visionneuse-ouverte {
 .projet-modale__apercu {
   order: 99;
 }
+
+/* ---------- 14. Numéro de la carte : rouge Persona au survol ---------- */
+.project-card__media::before {
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover .project-card__media::before,
+.project-card:focus-within .project-card__media::before {
+  color: #e10720;
+  opacity: 1;
+  text-shadow: 2px 2px 0 #ffffff, 4px 4px 0 #000000;
+  transform: scale(1.08);
+  transform-origin: top right;
+}
